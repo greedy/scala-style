@@ -146,7 +146,7 @@ spaces separated the target, the operator and the parameter:
     // wrong!
     "daniel"+" "+"spiewak"
     
-For the most part, this idiom follows Java and Haskell syntactic conventions.
+For the most part, this idiom follows Java syntactic conventions.
 
 Operators which take more than one parameter (they do exist!) should still be
 invoked using infix notation, delimited by spaces:
