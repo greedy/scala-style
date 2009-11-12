@@ -1,5 +1,6 @@
 ---
-title: Scala Style Guide
+title: Main
+layout: default
 permalink: index.html
 ---
 
