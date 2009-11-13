@@ -9,9 +9,10 @@ two upper-case characters, usually repeated.  For example::
     class HOMap[AA[_], BB[_]] { ... }
     
 It is also (sometimes) acceptable to give full, descriptive names to higher-kinded
-parameters.  Thus, the following would be an equally valid definition of ``HOMap``::
+parameters.  In this case, use all-caps to make it clear you are not referring
+to a class or trait.  Thus, the following would be an equally valid definition of ``HOMap``::
     
-    class HOMap[Key[_], Value[_]] { ... }
+    class HOMap[KEY[_], VALUE[_]] { ... }
     
 In such cases, the type naming conventions should be observed.
 
