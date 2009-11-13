@@ -928,7 +928,6 @@ The key here is that readability is not hindered by moving both branches inline
 with the ``if``/``else``.  Note that this style should never be used with
 imperative ``if`` expressions nor should curly braces be employed.
 
-
 Method Invocation
 =================
 
@@ -1086,7 +1085,6 @@ invoked using infix notation, delimited by spaces::
     foo ** (bar, baz)
     
 Such operators are fairly rare, however, and should be avoided during API design.
-
 
 Files
 =====
