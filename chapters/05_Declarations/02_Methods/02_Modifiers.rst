@@ -1,17 +1,3 @@
-Methods
--------
-
-Methods should be declared according to the following pattern::
-    
-    def foo(bar: Baz): Bin = expr
-    
-The only exceptions to this rule are methods which return ``Unit``.  Such methods
-should use Scala's syntactic sugar to avoid accidentally confusing return types::
-    
-    def foo(bar: Baz) {       // return type is Unit
-      expr
-    }
-    
 Modifiers
 ~~~~~~~~~
 
@@ -81,45 +67,3 @@ following way::
       }
     }
     
-Currying
-~~~~~~~~
-
-In general, you should only curry functions if there is a good reason to do so.
-Curried functions have a more verbose declaration and invocation syntax and are
-harder for less-experienced Scala developers to understand.  When you do declare
-a curried function, you should take advantage of Scala's syntactic sugar involving
-multiple groups of parentheses::
-    
-    // right!
-    def add(a: Int)(b: Int) = a + b
-    
-    // wrong!
-    def add(a: Int) = { b: Int => a + b }
-    
-Scala will compile both of these declarations into the same result.  However,
-the former is slightly easier to read than the latter.
-
-Higher-Order Functions
-~~~~~~~~~~~~~~~~~~~~~~
-
-It's worth keeping in mind when declaring higher-order functions the fact that
-Scala allows a somewhat nicer syntax for such functions at call-site when the
-function parameter is curried as the last argument.  For example, this is the
-``foldl`` function in SML::
-    
-    fun foldl (f: ('b * 'a) -> 'b) (init: 'b) (ls: 'a list) = ...
-    
-In Scala, the preferred style is the exact inverse::
-    
-    def foldLeft[A, B](ls: List[A])(init: B)(f: (B, A) => B) = ...
-    
-By placing the function parameter *last*, we have enabled invocation syntax like
-the following::
-    
-    foldLeft(List(1, 2, 3, 4))(0) { _ + _ }
-    
-The function value in this invocation is not wrapped in parentheses; it is
-syntactically quite disconnected from the function itself (``foldLeft``).  This
-style is preferred for its brevity and cleanliness.
-
-

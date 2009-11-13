@@ -1,26 +1,3 @@
-Arity-1
--------
-
-Scala has a special syntax for invoking methods of arity-1 (one argument)::
-    
-    names.mkString(",")
-    
-    // is the same as
-    
-    names mkString ","
-    
-This syntax is formally known as "infix notation".  It should *only* be used for
-purely-functional methods (methods with no side-effects) - such as ``mkString`` -
-or methods which take functions as paramethers - such as ``foreach``::
-    
-    // right!
-    names foreach { n => println(n) }
-    names mkString ","
-    optStr getOrElse "<empty>"
-    
-    // wrong!
-    javaList add item
-
 Higher-Order Functions
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -45,5 +22,4 @@ isolation looks for all the world like we are invoking the ``filter`` method on
 a function value.  However, we are actually invoking ``filter`` on the result of
 the ``map`` method, which takes the function value as a parameter.  This syntax
 is confusing and often discouraged in Ruby, but it is shunned outright in Scala.
-
 

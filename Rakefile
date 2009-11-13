@@ -9,7 +9,7 @@ NAME="scala_style_guide"
 task :rst do
   File.open(RST_FILE,'w') do |out|
     cat_file(INDEX,out)
-    `cd chapters ; ls ; cd -`.split(/\n/).each do |file|
+    `cd chapters ; find . -name \\*.rst | sort ; cd -`.split(/\n/).each do |file|
       next if !(file =~ /\.rst$/)
       cat_file("chapters/" + file,out)
     end

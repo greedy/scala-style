@@ -331,7 +331,6 @@ Operator definition should be considered an advanced feature in Scala, to be use
 only by those most well-versed in its pitfalls.  Without care, excessive operator
 overloading can easily transform even the simplest code into symbolic soup.
 
-
 Fields
 ------
 
@@ -368,7 +367,6 @@ parameters.  Thus, the following would be an equally valid definition of ``HOMap
     class HOMap[Key[_], Value[_]] { ... }
     
 In such cases, the type naming conventions should be observed.
-
 
 Type Aliases
 ------------
@@ -451,7 +449,6 @@ analogous syntax::
     
     def printName()         // abstract def for printName(): Unit
     
-
 Annotations
 -----------
 
@@ -537,7 +534,6 @@ needlessly verbose.  Consider the more extreme example::
     
 By omitting the parentheses, we have saved six whole characters and dramatically
 improved the readability of the type expression.
-
 
 Structural Types
 ----------------
@@ -759,7 +755,6 @@ The function value in this invocation is not wrapped in parentheses; it is
 syntactically quite disconnected from the function itself (``foldLeft``).  This
 style is preferred for its brevity and cleanliness.
 
-
 Fields
 ------
 
@@ -816,7 +811,6 @@ brace, as should the "arrow" (``=>``)::
     
 As noted earlier, function values should leverage type inference whenever
 possible.
-
 
 Control Structures
 ==================
@@ -1015,7 +1009,6 @@ However, the following would have been just as acceptable::
     // safer
     val reg = """\d+(\.\d+)?""".r
 
-
 Arity-1
 -------
 
@@ -1063,7 +1056,6 @@ isolation looks for all the world like we are invoking the ``filter`` method on
 a function value.  However, we are actually invoking ``filter`` on the result of
 the ``map`` method, which takes the function value as a parameter.  This syntax
 is confusing and often discouraged in Ruby, but it is shunned outright in Scala.
-
 
 Operators
 ---------
