@@ -28,7 +28,6 @@ but SML's conventions for type annotation, Haskell's conventions for type
 parameter naming (except upper-case rather than lower) and Ruby's conventions for
 non-boolean accessor methods.  Scala really is a hybrid language!
 
-
 Indentation
 ===========
 
@@ -397,7 +396,6 @@ improves the brevity of most Scala sources.
 This convention only applies to method parameters and local fields.  Anything
 which affects the public interface of a class should be given a fully-descriptive
 name.
-
 
 Types
 =====
@@ -1153,4 +1151,3 @@ units within (e.g. ``ast.scala``).
 .. _Lift: http://liftweb.com
 .. _arity: http://en.wikipedia.org/wiki/Arity
 .. _kind: http://en.wikipedia.org/wiki/Kind_(type_theory)
-
