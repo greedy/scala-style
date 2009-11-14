@@ -28,3 +28,5 @@ but SML's conventions for type annotation, Haskell's conventions for type
 parameter naming (except upper-case rather than lower) and Ruby's conventions for
 non-boolean accessor methods.  Scala really is a hybrid language!
 
+.. _Standard ML: http://en.wikipedia.org/wiki/Standard_ML
+

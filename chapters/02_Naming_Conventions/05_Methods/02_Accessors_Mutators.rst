@@ -78,3 +78,5 @@ Note that fields may actually be used in a number of situations where accessors
 and mutators would be required in languages like Java.  Always prefer fields over
 methods when given the choice.
 
+.. _Lift: http://liftweb.com
+

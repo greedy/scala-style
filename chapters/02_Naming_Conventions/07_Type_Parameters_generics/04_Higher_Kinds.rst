@@ -16,3 +16,5 @@ to a class or trait.  Thus, the following would be an equally valid definition o
     
 In such cases, the type naming conventions should be observed.
 
+.. _kind: http://en.wikipedia.org/wiki/Kind_(type_theory)
+

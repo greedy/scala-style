@@ -34,8 +34,3 @@ the example above), or may be descriptive of the logical property shared by all
 units within (e.g. ``ast.scala``).
 
 
-.. _Standard ML: http://en.wikipedia.org/wiki/Standard_ML
-.. _pipeline operator: http://paste.pocoo.org/show/134013/
-.. _Lift: http://liftweb.com
-.. _arity: http://en.wikipedia.org/wiki/Arity
-.. _kind: http://en.wikipedia.org/wiki/Kind_(type_theory)

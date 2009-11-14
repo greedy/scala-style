@@ -28,6 +28,8 @@ but SML's conventions for type annotation, Haskell's conventions for type
 parameter naming (except upper-case rather than lower) and Ruby's conventions for
 non-boolean accessor methods.  Scala really is a hybrid language!
 
+.. _Standard ML: http://en.wikipedia.org/wiki/Standard_ML
+
 Indentation
 ===========
 
@@ -76,6 +78,7 @@ Without this trailing operator, Scala will infer a semi-colon at the end of a
 line which was intended to wrap, throwing off the compilation sometimes without
 even so much as a warning.
 
+.. _pipeline operator: http://paste.pocoo.org/show/134013/
 
 Methods with Numerous Arguments
 -------------------------------
@@ -269,6 +272,8 @@ Note that fields may actually be used in a number of situations where accessors
 and mutators would be required in languages like Java.  Always prefer fields over
 methods when given the choice.
 
+.. _Lift: http://liftweb.com
+
 Parentheses
 ~~~~~~~~~~~
 
@@ -307,6 +312,8 @@ also the call site.  Thus, if you are calling a method which you know has
 side-effects (returning ``Unit`` is usually a sure sign of this), then you should
 qualify the invocation with parentheses (e.g. ``foo()``).  Avoid the temptation
 to omit parentheses simply because it saves two characters!
+
+.. _arity: http://en.wikipedia.org/wiki/Arity
 
 Operators
 ~~~~~~~~~
@@ -368,6 +375,8 @@ to a class or trait.  Thus, the following would be an equally valid definition o
     class HOMap[KEY[_], VALUE[_]] { ... }
     
 In such cases, the type naming conventions should be observed.
+
+.. _kind: http://en.wikipedia.org/wiki/Kind_(type_theory)
 
 Type Aliases
 ------------
@@ -1127,8 +1136,3 @@ the example above), or may be descriptive of the logical property shared by all
 units within (e.g. ``ast.scala``).
 
 
-.. _Standard ML: http://en.wikipedia.org/wiki/Standard_ML
-.. _pipeline operator: http://paste.pocoo.org/show/134013/
-.. _Lift: http://liftweb.com
-.. _arity: http://en.wikipedia.org/wiki/Arity
-.. _kind: http://en.wikipedia.org/wiki/Kind_(type_theory)

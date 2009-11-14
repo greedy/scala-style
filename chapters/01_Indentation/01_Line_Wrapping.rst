@@ -22,4 +22,5 @@ Without this trailing operator, Scala will infer a semi-colon at the end of a
 line which was intended to wrap, throwing off the compilation sometimes without
 even so much as a warning.
 
+.. _pipeline operator: http://paste.pocoo.org/show/134013/
 

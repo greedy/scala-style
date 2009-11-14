@@ -37,3 +37,5 @@ side-effects (returning ``Unit`` is usually a sure sign of this), then you shoul
 qualify the invocation with parentheses (e.g. ``foo()``).  Avoid the temptation
 to omit parentheses simply because it saves two characters!
 
+.. _arity: http://en.wikipedia.org/wiki/Arity
+
