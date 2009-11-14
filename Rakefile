@@ -21,6 +21,7 @@ Grancher::Task.new do |g|
   g.branch = "gh-pages"
   g.push_to = "origin"
   g.file "index.html"
+  g.file "styles.css"
 
 end
 
