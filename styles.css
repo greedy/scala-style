@@ -1,0 +1,36 @@
+body {
+    background: #8596AA;
+    font-size: 12pt;
+    line-height: 20pt;
+    font-family : "Helvetica neue", Arial, Verdana, sans-serif;
+}
+
+.document {
+    width: 850px;
+    background: white;
+    margin-left: 100px;
+    padding: 12pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #336299;
+}
+
+p, ul, ol, li {
+    text-align: justify;
+}
+
+tt, pre, code {
+    background: #eee;
+    color: black;
+    font-weight: bold;
+    font-size: 12pt;
+    font-family: courier, monospace;
+}
+
+pre {
+    margin-left: 2em;
+    border: solid thin #ddd;
+    padding: 9px;
+}
+
