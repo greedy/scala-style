@@ -11,6 +11,14 @@ encouraged and how it relates to other alternatives. As with all style guides,
 treat this document as a list of rules to be broken. There are certainly times
 when alternative styles should be preferred over the ones given here.
 
+.. contents:: Table of Contents
+   :depth: 2
+
+.. sectnum::
+
+Overview
+========
+
 Generally speaking, Scala seeks to mimic Java conventions to ease interoperability.
 When in doubt regarding the idiomatic way to express a particular concept, adopt
 conventions and idioms from the following languages (in this order):
