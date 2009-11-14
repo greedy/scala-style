@@ -5,6 +5,10 @@ body {
     font-family : "Helvetica neue", Arial, Verdana, sans-serif;
 }
 
+.contents {
+    font-size: 10pt;
+    line-height: 12pt;
+}
 .document {
     width: 850px;
     background: white;
@@ -12,8 +16,18 @@ body {
     padding: 12pt;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+h1 a, h2 a, h3 a, h4 a, h5 a, h6  a{
     color: #336299;
+}
+
+a {
+    color: #336299;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 p, ul, ol, li {
