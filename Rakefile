@@ -69,7 +69,7 @@ desc "Pushes the current code to github pages"
 task :ghpages => [:rst,:index,:publish] do 
 end
 
-GH_HTML_ARGS = "--title='Scala Style Guide' --toc-entry-backlinks --toc-top-backlinks --section-numbering --link-stylesheet --stylesheet=styles.css"
+GH_HTML_ARGS = "--title='Scala Style Guide' --toc-entry-backlinks --toc-top-backlinks --link-stylesheet --stylesheet=styles.css"
 task :index do
   `rst2html#{py} #{GH_HTML_ARGS} #{RST_FILE} > index.html`
 end
