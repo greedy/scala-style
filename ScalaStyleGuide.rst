@@ -14,7 +14,7 @@ when alternative styles should be preferred over the ones given here.
 This document is available in the following formats:
 
 * HTML at http://davetron5000.github.com/scala-style
-* PDF at  http://davetron5000.github.com/scala-style/scala_style_guide.pdf
+* PDF at  http://davetron5000.github.com/scala-style/ScalaStyleGuide.pdf
 * ReStructured Text source at http://www.github.com/davetron5000/scala-style
 
 .. contents:: Table of Contents
