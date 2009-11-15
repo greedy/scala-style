@@ -1,3 +1,9 @@
 *.sw?
-scala_style_guide.html
+ScalaStyleGuide.html
+ScalaStyleGuide.pdf
 index.html
+*.tex
+*.aux
+*.log
+*.out
+*.dvi
