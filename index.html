@@ -28,56 +28,57 @@ when alternative styles should be preferred over the ones given here.</p>
 <div class="contents topic" id="table-of-contents">
 <p class="topic-title first">Table of Contents</p>
 <ul class="auto-toc simple">
-<li><a class="reference internal" href="#overview" id="id9">1&nbsp;&nbsp;&nbsp;Overview</a></li>
-<li><a class="reference internal" href="#indentation" id="id10">2&nbsp;&nbsp;&nbsp;Indentation</a><ul class="auto-toc">
-<li><a class="reference internal" href="#line-wrapping" id="id11">2.1&nbsp;&nbsp;&nbsp;Line Wrapping</a></li>
-<li><a class="reference internal" href="#methods-with-numerous-arguments" id="id12">2.2&nbsp;&nbsp;&nbsp;Methods with Numerous Arguments</a></li>
+<li><a class="reference internal" href="#overview" id="id10">1&nbsp;&nbsp;&nbsp;Overview</a></li>
+<li><a class="reference internal" href="#indentation" id="id11">2&nbsp;&nbsp;&nbsp;Indentation</a><ul class="auto-toc">
+<li><a class="reference internal" href="#line-wrapping" id="id12">2.1&nbsp;&nbsp;&nbsp;Line Wrapping</a></li>
+<li><a class="reference internal" href="#methods-with-numerous-arguments" id="id13">2.2&nbsp;&nbsp;&nbsp;Methods with Numerous Arguments</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#naming-conventions" id="id13">3&nbsp;&nbsp;&nbsp;Naming Conventions</a><ul class="auto-toc">
-<li><a class="reference internal" href="#classes-traits" id="id14">3.1&nbsp;&nbsp;&nbsp;Classes/Traits</a></li>
-<li><a class="reference internal" href="#objects" id="id15">3.2&nbsp;&nbsp;&nbsp;Objects</a></li>
-<li><a class="reference internal" href="#packages" id="id16">3.3&nbsp;&nbsp;&nbsp;Packages</a></li>
-<li><a class="reference internal" href="#methods" id="id17">3.4&nbsp;&nbsp;&nbsp;Methods</a></li>
-<li><a class="reference internal" href="#fields" id="id18">3.5&nbsp;&nbsp;&nbsp;Fields</a></li>
-<li><a class="reference internal" href="#type-parameters-generics" id="id19">3.6&nbsp;&nbsp;&nbsp;Type Parameters (generics)</a></li>
-<li><a class="reference internal" href="#type-aliases" id="id20">3.7&nbsp;&nbsp;&nbsp;Type Aliases</a></li>
-<li><a class="reference internal" href="#special-note-on-brevity" id="id21">3.8&nbsp;&nbsp;&nbsp;Special Note on Brevity</a></li>
+<li><a class="reference internal" href="#naming-conventions" id="id14">3&nbsp;&nbsp;&nbsp;Naming Conventions</a><ul class="auto-toc">
+<li><a class="reference internal" href="#classes-traits" id="id15">3.1&nbsp;&nbsp;&nbsp;Classes/Traits</a></li>
+<li><a class="reference internal" href="#objects" id="id16">3.2&nbsp;&nbsp;&nbsp;Objects</a></li>
+<li><a class="reference internal" href="#packages" id="id17">3.3&nbsp;&nbsp;&nbsp;Packages</a></li>
+<li><a class="reference internal" href="#methods" id="id18">3.4&nbsp;&nbsp;&nbsp;Methods</a></li>
+<li><a class="reference internal" href="#fields" id="id19">3.5&nbsp;&nbsp;&nbsp;Fields</a></li>
+<li><a class="reference internal" href="#type-parameters-generics" id="id20">3.6&nbsp;&nbsp;&nbsp;Type Parameters (generics)</a></li>
+<li><a class="reference internal" href="#type-aliases" id="id21">3.7&nbsp;&nbsp;&nbsp;Type Aliases</a></li>
+<li><a class="reference internal" href="#annotations" id="id22">3.8&nbsp;&nbsp;&nbsp;Annotations</a></li>
+<li><a class="reference internal" href="#special-note-on-brevity" id="id23">3.9&nbsp;&nbsp;&nbsp;Special Note on Brevity</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#types" id="id22">4&nbsp;&nbsp;&nbsp;Types</a><ul class="auto-toc">
-<li><a class="reference internal" href="#inference" id="id23">4.1&nbsp;&nbsp;&nbsp;Inference</a></li>
-<li><a class="reference internal" href="#annotations" id="id24">4.2&nbsp;&nbsp;&nbsp;Annotations</a></li>
-<li><a class="reference internal" href="#ascription" id="id25">4.3&nbsp;&nbsp;&nbsp;Ascription</a></li>
-<li><a class="reference internal" href="#functions" id="id26">4.4&nbsp;&nbsp;&nbsp;Functions</a></li>
-<li><a class="reference internal" href="#structural-types" id="id27">4.5&nbsp;&nbsp;&nbsp;Structural Types</a></li>
+<li><a class="reference internal" href="#types" id="id24">4&nbsp;&nbsp;&nbsp;Types</a><ul class="auto-toc">
+<li><a class="reference internal" href="#inference" id="id25">4.1&nbsp;&nbsp;&nbsp;Inference</a></li>
+<li><a class="reference internal" href="#id1" id="id26">4.2&nbsp;&nbsp;&nbsp;Annotations</a></li>
+<li><a class="reference internal" href="#ascription" id="id27">4.3&nbsp;&nbsp;&nbsp;Ascription</a></li>
+<li><a class="reference internal" href="#functions" id="id28">4.4&nbsp;&nbsp;&nbsp;Functions</a></li>
+<li><a class="reference internal" href="#structural-types" id="id29">4.5&nbsp;&nbsp;&nbsp;Structural Types</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#nested-blocks" id="id28">5&nbsp;&nbsp;&nbsp;Nested Blocks</a><ul class="auto-toc">
-<li><a class="reference internal" href="#curly-braces" id="id29">5.1&nbsp;&nbsp;&nbsp;Curly Braces</a></li>
-<li><a class="reference internal" href="#id1" id="id30">5.2&nbsp;&nbsp;&nbsp;Parentheses</a></li>
+<li><a class="reference internal" href="#nested-blocks" id="id30">5&nbsp;&nbsp;&nbsp;Nested Blocks</a><ul class="auto-toc">
+<li><a class="reference internal" href="#curly-braces" id="id31">5.1&nbsp;&nbsp;&nbsp;Curly Braces</a></li>
+<li><a class="reference internal" href="#id2" id="id32">5.2&nbsp;&nbsp;&nbsp;Parentheses</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#declarations" id="id31">6&nbsp;&nbsp;&nbsp;Declarations</a><ul class="auto-toc">
-<li><a class="reference internal" href="#id2" id="id32">6.1&nbsp;&nbsp;&nbsp;Methods</a></li>
-<li><a class="reference internal" href="#id3" id="id33">6.2&nbsp;&nbsp;&nbsp;Fields</a></li>
-<li><a class="reference internal" href="#id4" id="id34">6.3&nbsp;&nbsp;&nbsp;Function Values</a></li>
+<li><a class="reference internal" href="#declarations" id="id33">6&nbsp;&nbsp;&nbsp;Declarations</a><ul class="auto-toc">
+<li><a class="reference internal" href="#id3" id="id34">6.1&nbsp;&nbsp;&nbsp;Methods</a></li>
+<li><a class="reference internal" href="#id4" id="id35">6.2&nbsp;&nbsp;&nbsp;Fields</a></li>
+<li><a class="reference internal" href="#id5" id="id36">6.3&nbsp;&nbsp;&nbsp;Function Values</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#control-structures" id="id35">7&nbsp;&nbsp;&nbsp;Control Structures</a><ul class="auto-toc">
-<li><a class="reference internal" href="#id5" id="id36">7.1&nbsp;&nbsp;&nbsp;Curly-Braces</a></li>
-<li><a class="reference internal" href="#comprehensions" id="id37">7.2&nbsp;&nbsp;&nbsp;Comprehensions</a></li>
-<li><a class="reference internal" href="#trivial-conditionals" id="id38">7.3&nbsp;&nbsp;&nbsp;Trivial Conditionals</a></li>
+<li><a class="reference internal" href="#control-structures" id="id37">7&nbsp;&nbsp;&nbsp;Control Structures</a><ul class="auto-toc">
+<li><a class="reference internal" href="#id6" id="id38">7.1&nbsp;&nbsp;&nbsp;Curly-Braces</a></li>
+<li><a class="reference internal" href="#comprehensions" id="id39">7.2&nbsp;&nbsp;&nbsp;Comprehensions</a></li>
+<li><a class="reference internal" href="#trivial-conditionals" id="id40">7.3&nbsp;&nbsp;&nbsp;Trivial Conditionals</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#method-invocation" id="id39">8&nbsp;&nbsp;&nbsp;Method Invocation</a><ul class="auto-toc">
-<li><a class="reference internal" href="#arity-0" id="id40">8.1&nbsp;&nbsp;&nbsp;Arity-0</a></li>
-<li><a class="reference internal" href="#id6" id="id41">8.2&nbsp;&nbsp;&nbsp;Arity-1</a></li>
-<li><a class="reference internal" href="#id8" id="id42">8.3&nbsp;&nbsp;&nbsp;Operators</a></li>
+<li><a class="reference internal" href="#method-invocation" id="id41">8&nbsp;&nbsp;&nbsp;Method Invocation</a><ul class="auto-toc">
+<li><a class="reference internal" href="#arity-0" id="id42">8.1&nbsp;&nbsp;&nbsp;Arity-0</a></li>
+<li><a class="reference internal" href="#id7" id="id43">8.2&nbsp;&nbsp;&nbsp;Arity-1</a></li>
+<li><a class="reference internal" href="#id9" id="id44">8.3&nbsp;&nbsp;&nbsp;Operators</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#files" id="id43">9&nbsp;&nbsp;&nbsp;Files</a><ul class="auto-toc">
-<li><a class="reference internal" href="#multi-unit-files" id="id44">9.1&nbsp;&nbsp;&nbsp;Multi-Unit Files</a></li>
+<li><a class="reference internal" href="#files" id="id45">9&nbsp;&nbsp;&nbsp;Files</a><ul class="auto-toc">
+<li><a class="reference internal" href="#multi-unit-files" id="id46">9.1&nbsp;&nbsp;&nbsp;Multi-Unit Files</a></li>
 </ul>
 </li>
 </ul>
@@ -427,8 +428,18 @@ class HOMap[KEY[_], VALUE[_]] { ... }
 type StringList = List[String]
 </pre>
 </div>
+<div class="section" id="annotations">
+<h2><a class="toc-backref" href="#table-of-contents">3.8&nbsp;&nbsp;&nbsp;Annotations</a></h2>
+<p>Annotations, such as <tt class="docutils literal"><span class="pre">&#64;volatile</span></tt> should be in camel-case, with the first letter
+being lower case:</p>
+<pre class="literal-block">
+class cloneable extends StaticAnnotation
+</pre>
+<p>This convention is used throughout the Scala library, even though
+it is not consistent with Java annotations.</p>
+</div>
 <div class="section" id="special-note-on-brevity">
-<h2><a class="toc-backref" href="#table-of-contents">3.8&nbsp;&nbsp;&nbsp;Special Note on Brevity</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents">3.9&nbsp;&nbsp;&nbsp;Special Note on Brevity</a></h2>
 <p>Because of Scala's roots in the functional languages, it is quite normal for
 local field names to be extremely brief:</p>
 <pre class="literal-block">
@@ -496,7 +507,7 @@ def printName()         // abstract def for printName(): Unit
 </pre>
 </div>
 </div>
-<div class="section" id="annotations">
+<div class="section" id="id1">
 <h2><a class="toc-backref" href="#table-of-contents">4.2&nbsp;&nbsp;&nbsp;Annotations</a></h2>
 <p>Type annotations should be patterned according to the following template:</p>
 <pre class="literal-block">
@@ -611,7 +622,7 @@ predictable when dealing with this style due to the way in which semi-colon
 inference is implemented.  Many headaches will be saved by simply following the
 curly brace convention demonstrated above.</p>
 </div>
-<div class="section" id="id1">
+<div class="section" id="id2">
 <h2><a class="toc-backref" href="#table-of-contents">5.2&nbsp;&nbsp;&nbsp;Parentheses</a></h2>
 <p>In the rare cases when parenthetical blocks wrap across lines, the opening and
 closing parentheses should be unspaced and kept on the same lines as their content
@@ -655,7 +666,7 @@ cases, the non-trivial <tt class="docutils literal"><span class="pre">val</span>
 logical member ordering would dictate.  This rule <em>only</em> applies to <tt class="docutils literal"><span class="pre">val</span></tt> and
 <tt class="docutils literal"><span class="pre">lazy</span> <span class="pre">val</span></tt>!  It becomes very difficult to track changing aliases if <tt class="docutils literal"><span class="pre">var</span></tt>
 declarations are strewn throughout class file.</p>
-<div class="section" id="id2">
+<div class="section" id="id3">
 <h2><a class="toc-backref" href="#table-of-contents">6.1&nbsp;&nbsp;&nbsp;Methods</a></h2>
 <p>Methods should be declared according to the following pattern:</p>
 <pre class="literal-block">
@@ -775,12 +786,12 @@ syntactically quite disconnected from the function itself (<tt class="docutils l
 style is preferred for its brevity and cleanliness.</p>
 </div>
 </div>
-<div class="section" id="id3">
+<div class="section" id="id4">
 <h2><a class="toc-backref" href="#table-of-contents">6.2&nbsp;&nbsp;&nbsp;Fields</a></h2>
 <p>Fields should follow the declaration rules for methods, taking special note of
 access modifier ordering and annotation conventions.</p>
 </div>
-<div class="section" id="id4">
+<div class="section" id="id5">
 <h2><a class="toc-backref" href="#table-of-contents">6.3&nbsp;&nbsp;&nbsp;Function Values</a></h2>
 <p>Scala provides a number of different syntactic options for declaring function
 values.  For example, the following declarations are exactly equivalent:</p>
@@ -842,7 +853,7 @@ if(foo) bar else baz
 for(i &lt;- 0 to 10) { ... }
 while(true) { println(&quot;Hello, World!&quot;) }
 </pre>
-<div class="section" id="id5">
+<div class="section" id="id6">
 <h2><a class="toc-backref" href="#table-of-contents">7.1&nbsp;&nbsp;&nbsp;Curly-Braces</a></h2>
 <p>Curly-braces should be omitted in cases where the control structure represents
 a pure-functional operation and all branches of the control structure (relevant
@@ -1014,7 +1025,7 @@ val reg = &quot;&quot;&quot;\d+(\.\d+)?&quot;&quot;&quot;.r
 </pre>
 </div>
 </div>
-<div class="section" id="id6">
+<div class="section" id="id7">
 <h2><a class="toc-backref" href="#table-of-contents">8.2&nbsp;&nbsp;&nbsp;Arity-1</a></h2>
 <p>Scala has a special syntax for invoking methods of arity-1 (one argument):</p>
 <pre class="literal-block">
@@ -1036,7 +1047,7 @@ optStr getOrElse &quot;&lt;empty&gt;&quot;
 // wrong!
 javaList add item
 </pre>
-<div class="section" id="id7">
+<div class="section" id="id8">
 <h3>8.2.1&nbsp;&nbsp;&nbsp;Higher-Order Functions</h3>
 <p>As noted, methods which take functions as parameters (such as <tt class="docutils literal"><span class="pre">map</span></tt> or <tt class="docutils literal"><span class="pre">foreach</span></tt>)
 should be invoked using infix notation.  It is also <em>possible</em> to invoke such
@@ -1061,7 +1072,7 @@ the <tt class="docutils literal"><span class="pre">map</span></tt> method, which
 is confusing and often discouraged in Ruby, but it is shunned outright in Scala.</p>
 </div>
 </div>
-<div class="section" id="id8">
+<div class="section" id="id9">
 <h2><a class="toc-backref" href="#table-of-contents">8.3&nbsp;&nbsp;&nbsp;Operators</a></h2>
 <p>Symbolic methods (operators) should <em>always</em> be invoked using infix notation with
 spaces separated the target, the operator and the parameter:</p>
