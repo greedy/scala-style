@@ -47,3 +47,7 @@ pre {
     padding: 9px;
 }
 
+table.footnote td {
+    font-size: 10pt;
+    font-style: italic;
+}
