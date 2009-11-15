@@ -49,34 +49,35 @@ when alternative styles should be preferred over the ones given here.</p>
 <li><a class="reference internal" href="#inference" id="id23">4.1&nbsp;&nbsp;&nbsp;Inference</a></li>
 <li><a class="reference internal" href="#annotations" id="id24">4.2&nbsp;&nbsp;&nbsp;Annotations</a></li>
 <li><a class="reference internal" href="#ascription" id="id25">4.3&nbsp;&nbsp;&nbsp;Ascription</a></li>
-<li><a class="reference internal" href="#structural-types" id="id26">4.4&nbsp;&nbsp;&nbsp;Structural Types</a></li>
+<li><a class="reference internal" href="#functions" id="id26">4.4&nbsp;&nbsp;&nbsp;Functions</a></li>
+<li><a class="reference internal" href="#structural-types" id="id27">4.5&nbsp;&nbsp;&nbsp;Structural Types</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#nested-blocks" id="id27">5&nbsp;&nbsp;&nbsp;Nested Blocks</a><ul class="auto-toc">
-<li><a class="reference internal" href="#curly-braces" id="id28">5.1&nbsp;&nbsp;&nbsp;Curly Braces</a></li>
-<li><a class="reference internal" href="#id1" id="id29">5.2&nbsp;&nbsp;&nbsp;Parentheses</a></li>
+<li><a class="reference internal" href="#nested-blocks" id="id28">5&nbsp;&nbsp;&nbsp;Nested Blocks</a><ul class="auto-toc">
+<li><a class="reference internal" href="#curly-braces" id="id29">5.1&nbsp;&nbsp;&nbsp;Curly Braces</a></li>
+<li><a class="reference internal" href="#id1" id="id30">5.2&nbsp;&nbsp;&nbsp;Parentheses</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#declarations" id="id30">6&nbsp;&nbsp;&nbsp;Declarations</a><ul class="auto-toc">
-<li><a class="reference internal" href="#id2" id="id31">6.1&nbsp;&nbsp;&nbsp;Methods</a></li>
-<li><a class="reference internal" href="#id3" id="id32">6.2&nbsp;&nbsp;&nbsp;Fields</a></li>
-<li><a class="reference internal" href="#id4" id="id33">6.3&nbsp;&nbsp;&nbsp;Function Values</a></li>
+<li><a class="reference internal" href="#declarations" id="id31">6&nbsp;&nbsp;&nbsp;Declarations</a><ul class="auto-toc">
+<li><a class="reference internal" href="#id2" id="id32">6.1&nbsp;&nbsp;&nbsp;Methods</a></li>
+<li><a class="reference internal" href="#id3" id="id33">6.2&nbsp;&nbsp;&nbsp;Fields</a></li>
+<li><a class="reference internal" href="#id4" id="id34">6.3&nbsp;&nbsp;&nbsp;Function Values</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#control-structures" id="id34">7&nbsp;&nbsp;&nbsp;Control Structures</a><ul class="auto-toc">
-<li><a class="reference internal" href="#id5" id="id35">7.1&nbsp;&nbsp;&nbsp;Curly-Braces</a></li>
-<li><a class="reference internal" href="#comprehensions" id="id36">7.2&nbsp;&nbsp;&nbsp;Comprehensions</a></li>
-<li><a class="reference internal" href="#trivial-conditionals" id="id37">7.3&nbsp;&nbsp;&nbsp;Trivial Conditionals</a></li>
+<li><a class="reference internal" href="#control-structures" id="id35">7&nbsp;&nbsp;&nbsp;Control Structures</a><ul class="auto-toc">
+<li><a class="reference internal" href="#id5" id="id36">7.1&nbsp;&nbsp;&nbsp;Curly-Braces</a></li>
+<li><a class="reference internal" href="#comprehensions" id="id37">7.2&nbsp;&nbsp;&nbsp;Comprehensions</a></li>
+<li><a class="reference internal" href="#trivial-conditionals" id="id38">7.3&nbsp;&nbsp;&nbsp;Trivial Conditionals</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#method-invocation" id="id38">8&nbsp;&nbsp;&nbsp;Method Invocation</a><ul class="auto-toc">
-<li><a class="reference internal" href="#arity-0" id="id39">8.1&nbsp;&nbsp;&nbsp;Arity-0</a></li>
-<li><a class="reference internal" href="#id6" id="id40">8.2&nbsp;&nbsp;&nbsp;Arity-1</a></li>
-<li><a class="reference internal" href="#id8" id="id41">8.3&nbsp;&nbsp;&nbsp;Operators</a></li>
+<li><a class="reference internal" href="#method-invocation" id="id39">8&nbsp;&nbsp;&nbsp;Method Invocation</a><ul class="auto-toc">
+<li><a class="reference internal" href="#arity-0" id="id40">8.1&nbsp;&nbsp;&nbsp;Arity-0</a></li>
+<li><a class="reference internal" href="#id6" id="id41">8.2&nbsp;&nbsp;&nbsp;Arity-1</a></li>
+<li><a class="reference internal" href="#id8" id="id42">8.3&nbsp;&nbsp;&nbsp;Operators</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#files" id="id42">9&nbsp;&nbsp;&nbsp;Files</a><ul class="auto-toc">
-<li><a class="reference internal" href="#multi-unit-files" id="id43">9.1&nbsp;&nbsp;&nbsp;Multi-Unit Files</a></li>
+<li><a class="reference internal" href="#files" id="id43">9&nbsp;&nbsp;&nbsp;Files</a><ul class="auto-toc">
+<li><a class="reference internal" href="#multi-unit-files" id="id44">9.1&nbsp;&nbsp;&nbsp;Multi-Unit Files</a></li>
 </ul>
 </li>
 </ul>
@@ -532,9 +533,10 @@ the type checker.  Its use is not common, but it does happen on occasion.  The
 most often seen case of ascription is invoking a varargs method with a single
 <tt class="docutils literal"><span class="pre">Seq</span></tt> parameter.  This is done by ascribing the <tt class="docutils literal"><span class="pre">_*</span></tt> type (as in the second
 example above).</p>
-<p>Ascription follows the type annotation conventions; a space follows the colon.
-Functions
----------</p>
+<p>Ascription follows the type annotation conventions; a space follows the colon.</p>
+</div>
+<div class="section" id="functions">
+<h2><a class="toc-backref" href="#table-of-contents">4.4&nbsp;&nbsp;&nbsp;Functions</a></h2>
 <p>Function types should be declared with a space between the parameter type, the
 arrow and the return type:</p>
 <pre class="literal-block">
@@ -545,7 +547,7 @@ def bar(f: (Boolean, Double) =&gt; List[String]) = ...
 <p>Parentheses should be omitted wherever possible (e.g. methods of arity-1, such
 as <tt class="docutils literal"><span class="pre">Int</span> <span class="pre">=&gt;</span> <span class="pre">String</span></tt>).</p>
 <div class="section" id="arity-1">
-<h3>4.3.1&nbsp;&nbsp;&nbsp;Arity-1</h3>
+<h3>4.4.1&nbsp;&nbsp;&nbsp;Arity-1</h3>
 <p>Scala has a special syntax for declaring types for functions of arity-1.  For
 example:</p>
 <pre class="literal-block">
@@ -566,7 +568,7 @@ improved the readability of the type expression.</p>
 </div>
 </div>
 <div class="section" id="structural-types">
-<h2><a class="toc-backref" href="#table-of-contents">4.4&nbsp;&nbsp;&nbsp;Structural Types</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents">4.5&nbsp;&nbsp;&nbsp;Structural Types</a></h2>
 <p>Structural types should be declared on a single line if they are less than 50
 characters in length.  Otherwise, they should be split across multiple lines and
 (usually) assigned to their own type alias:</p>
