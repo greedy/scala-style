@@ -14,7 +14,7 @@ when alternative styles should be preferred over the ones given here.
 This document is available in the following formats:
 
 * HTML at http://davetron5000.github.com/scala-style
-* PDF at  http://davetron5000.github.com/scala-style/scala_style_guide.pdf
+* PDF at  http://davetron5000.github.com/scala-style/ScalaStyleGuide.pdf
 * ReStructured Text source at http://www.github.com/davetron5000/scala-style
 
 .. contents:: Table of Contents
@@ -399,6 +399,17 @@ Type aliases follow the same naming conventions as classes.  For example::
     
     type StringList = List[String]
 
+
+Annotations
+-----------
+
+Annotations, such as ``@volatile`` should be in camel-case, with the first letter
+being lower case::
+    
+    class cloneable extends StaticAnnotation
+
+This convention is used throughout the Scala library, even though
+it is not consistent with Java annotations.
 
 Special Note on Brevity
 -----------------------
