@@ -40,7 +40,7 @@ Grancher::Task.new do |g|
   g.push_to = "origin"
   g.file "index.html"
   g.file "styles.css"
-  g.file "{NAME}.pdf"
+  g.file "#{NAME}.pdf"
 end
 
 def cat_file(filename,to_file)
