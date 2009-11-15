@@ -37,7 +37,6 @@ p, ul, ol, li {
 tt, pre, code {
     background: #eee;
     color: black;
-    font-weight: bold;
     font-size: 12pt;
     font-family: courier, monospace;
 }
