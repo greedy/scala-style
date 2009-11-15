@@ -32,6 +32,8 @@ CLEAN.include('*.out')
 CLEAN.include('*.tex')
 CLEAN.include('*.dvi')
 CLOBBER.include(NAME + '.html')
+CLOBBER.include('index.html')
+CLOBBER.include(NAME + '.pdf')
 
 Grancher::Task.new do |g|
   g.branch = "gh-pages"
