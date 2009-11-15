@@ -15,7 +15,23 @@
 #
 # Not sure why the port maintainers did this insanity, but there you go
 # You can also define this in your local environment and avoid the command line
+
+require 'rake/clean'
 require 'grancher/task'
+
+RST_FILE="README.rst"
+NAME="ScalaStyleGuide"
+INDEX="#{NAME}.rst"
+
+PY_DEFAULT="-2.6.py"
+py = ENV['PY'] || PY_DEFAULT
+
+CLEAN.include('*.aux')
+CLEAN.include('*.log')
+CLEAN.include('*.out')
+CLEAN.include('*.tex')
+CLEAN.include('*.dvi')
+CLOBBER.include(NAME + '.html')
 
 Grancher::Task.new do |g|
   g.branch = "gh-pages"
@@ -29,13 +45,6 @@ def cat_file(filename,to_file)
   File.open(filename) { |file| file.readlines.each { |line| to_file.puts(line) } }
 end
 
-INDEX="index.rst"
-RST_FILE="README.rst"
-NAME="scala_style_guide"
-PY_DEFAULT="-2.6.py"
-py = ENV['PY'] || PY_DEFAULT
-
-
 desc "Concatenate everything into README.rst"
 task :rst do
   File.open(RST_FILE,'w') do |out|
@@ -47,22 +56,15 @@ task :rst do
   end
 end
 
-task :clean do
-  `rm -f #{NAME}.tex`
-  `rm -f #{NAME}.html`
-  `rm -f index.html`
-end
-
-task :default => :rst
-
-desc "Create the LaTeX version"
 task :latex => :rst do
   `rst2newlatex#{py} #{RST_FILE} > #{NAME}.tex`
 end
 
-desc "Create the HTML version"
-task :html => :rst do
-  `rst2html#{py} #{RST_FILE} > #{NAME}.html`
+desc "Create PDF version"
+task :pdf => :latex do
+  `latex #{NAME}`
+  `latex #{NAME}` # twice to get the TOC working...ah LaTeX
+  `dvipdf #{NAME}`
 end
 
 desc "Pushes the current code to github pages"
@@ -70,6 +72,9 @@ task :ghpages => [:rst,:index,:publish] do
 end
 
 GH_HTML_ARGS = "--title='Scala Style Guide' --toc-entry-backlinks --toc-top-backlinks --link-stylesheet --stylesheet=styles.css"
-task :index do
+task :html do
   `rst2html#{py} #{GH_HTML_ARGS} #{RST_FILE} > index.html`
 end
+
+task :default => [:html,:pdf]
+
