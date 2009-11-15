@@ -184,16 +184,16 @@ with Scala's nested packages feature.  For example::
     
 This import will actually fail to resolve in some contexts as the ``net`` package
 may refer to the ``java.net`` package (or similar).  To compensate for this, it
-is often necessary to fully-qualify imports using the ``__root__`` directive,
+is often necessary to fully-qualify imports using the ``_root_`` directive,
 overriding any nested package resolves::
     
-    import __root__.net.liftweb._
+    import _root_.net.liftweb._
     
 Do not overuse this directive.  In general, nested package resolves are a good
-thing and very helpful in reducing import clutter.  Using ``__root__`` not only
+thing and very helpful in reducing import clutter.  Using ``_root_`` not only
 negates their benefit, but also introduces extra clutter in and of itself.
 Developers using IntelliJ IDEA should be particularly wary as its Scala plugin
-prefixes *every* import using ``__root__`` by default.
+prefixes *every* import using ``_root_`` by default.
 
 Methods
 -------
@@ -298,36 +298,40 @@ with parentheses (only applicable to methods of arity_-0).  For example::
     
     def foo2 = ...
     
-These are different methods at compile-time.  We can invoke ``foo1`` omitting
-the parentheses if we choose (e.g. ``foo1``), or we may include the parentheses
-as part of the invocation syntax (e.g. ``foo1()``).  However, ``foo2`` is limited
-to *only* parentheses-less invocations (e.g. ``foo2``).  If we attempt to call
-``foo2`` using parentheses, the compiler will produce an error.
+These are different methods at compile-time.  While ``foo1`` can be 
+called with or without the parentheses, ``foo2`` *may not* be called
+*with* parentheses.
 
 Thus, it is actually quite important that proper guidelines be observed regarding
 when it is appropriate to declare a method without parentheses and when it is
-not.  Please note that fluid APIs and internal domain-specific languages have a
-tendency to break the guidelines given below for the sake of syntax.  Such
-exceptions should not be considered a violation so much as a time when these
-rules do not apply.  In a DSL, syntax should be paramount over convention.
+not.
 
-* Methods which act as accessors of any sort (either encapsulating a field or a
-  logical property) should be declared *without* parentheses except in the
-  following case:
-* Methods which have *any* side-effects outside of their internal scope should
-  be declared *with* parentheses.  Ruby (and Lift) uses the ``!`` suffix to denote
-  this case.  Note that a method need not be defined as a pure function internally
-  to qualify as "side-effect free".  The question is whether the method changes
-  some global or instance variable.  If the answer to this question is "yes",
-  then parentheses should be used **for both declaration and invocation**.
+Methods which act as accessors of any sort (either encapsulating a field or a
+logical property) should be declared *without* parentheses except if they have side effects.
+While Ruby and Lift use a ``!`` to indicate this, the usage of parens is preferred [#dsl_note]_.  
 
-Let me restate that these conventions apply not only to the declaration site, but
-also the call site.  Thus, if you are calling a method which you know has
-side-effects (returning ``Unit`` is usually a sure sign of this), then you should
-qualify the invocation with parentheses (e.g. ``foo()``).  Avoid the temptation
-to omit parentheses simply because it saves two characters!
+Further, the callsite should follow the declaration; if declared with parentheses,
+call with parentheses.  While there is temptation to save a few characters,
+if you follow this guideline, your code will be *much* more readable and 
+maintainable.
+
+::
+
+  // doesn't change state, call as birthdate
+  def birthdate = firstName
+
+  // updates our internal state, call as age()
+  def age() = {
+    _age = updateAge(birthdate)
+    _age
+  }
 
 .. _arity: http://en.wikipedia.org/wiki/Arity
+
+.. [#dsl_note] Please note that fluid APIs and internal domain-specific languages have a
+               tendency to break the guidelines given below for the sake of syntax.  Such
+               exceptions should not be considered a violation so much as a time when these
+               rules do not apply.  In a DSL, syntax should be paramount over convention.
 
 Operators
 ~~~~~~~~~
@@ -1025,7 +1029,7 @@ The primary exception to this rule is for domain-specific languages.  One very
 common use of suffix notation which goes against the above is converting a
 ``String`` value into a ``Regexp``::
     
-    // tollerated
+    // tolerated
     val reg = """\d+(\.\d+)?"""r
     
 In this example, ``r`` is actually a method available on type ``String`` via an
