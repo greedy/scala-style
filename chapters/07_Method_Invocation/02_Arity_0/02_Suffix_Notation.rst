@@ -40,7 +40,7 @@ The primary exception to this rule is for domain-specific languages.  One very
 common use of suffix notation which goes against the above is converting a
 ``String`` value into a ``Regexp``::
     
-    // tollerated
+    // tolerated
     val reg = """\d+(\.\d+)?"""r
     
 In this example, ``r`` is actually a method available on type ``String`` via an
