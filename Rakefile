@@ -40,7 +40,7 @@ Grancher::Task.new do |g|
   g.push_to = "origin"
   g.file "index.html"
   g.file "styles.css"
-
+  g.file "{NAME}.pdf"
 end
 
 def cat_file(filename,to_file)
@@ -70,7 +70,7 @@ task :pdf => :latex do
 end
 
 desc "Pushes the current code to github pages"
-task :ghpages => [:html,:pdf,:publish] do 
+task :ghpages => [:html,:pdf,:clean,:publish] do 
 end
 
 GH_HTML_ARGS = "--title='Scala Style Guide' --toc-entry-backlinks --toc-top-backlinks --link-stylesheet --stylesheet=styles.css"
