@@ -515,6 +515,7 @@ most often seen case of ascription is invoking a varargs method with a single
 example above).
 
 Ascription follows the type annotation conventions; a space follows the colon.
+
 Functions
 ---------
 
