@@ -7,3 +7,4 @@ index.html
 *.log
 *.out
 *.dvi
+/_build/
