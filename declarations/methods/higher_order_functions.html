@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Higher-Order Functions &mdash; Scala Style Guide v1.0 documentation</title>
+    <link rel="stylesheet" href="../../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <link rel="top" title="Scala Style Guide v1.0 documentation" href="../../index.html" />
+    <link rel="up" title="Methods" href="index.html" />
+    <link rel="next" title="Fields" href="../fields.html" />
+    <link rel="prev" title="Currying" href="currying.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../fields.html" title="Fields"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="currying.html" title="Currying"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Scala Style Guide v1.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Declarations</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Methods</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="higher-order-functions">
+<h1>Higher-Order Functions<a class="headerlink" href="#higher-order-functions" title="Permalink to this headline">¶</a></h1>
+<p>It&#8217;s worth keeping in mind when declaring higher-order functions the fact that
+Scala allows a somewhat nicer syntax for such functions at call-site when the
+function parameter is curried as the last argument.  For example, this is the
+<tt class="docutils literal"><span class="pre">foldl</span></tt> function in SML:</p>
+<div class="highlight-scala"><pre>fun foldl (f: ('b * 'a) -&gt; 'b) (init: 'b) (ls: 'a list) = ...</pre>
+</div>
+<p>In Scala, the preferred style is the exact inverse:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">foldLeft</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">B</span><span class="o">](</span><span class="n">ls</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">init</span><span class="k">:</span> <span class="kt">B</span><span class="o">)(</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">B</span><span class="o">,</span> <span class="kt">A</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">B</span><span class="o">)</span> <span class="k">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>By placing the function parameter <em>last</em>, we have enabled invocation syntax like
+the following:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="n">foldLeft</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">))(</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span> <span class="k">_</span> <span class="o">+</span> <span class="k">_</span> <span class="o">}</span>
+</pre></div>
+</div>
+<p>The function value in this invocation is not wrapped in parentheses; it is
+syntactically quite disconnected from the function itself (<tt class="docutils literal"><span class="pre">foldLeft</span></tt>).  This
+style is preferred for its brevity and cleanliness.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="currying.html"
+                                  title="previous chapter">Currying</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="../fields.html"
+                                  title="next chapter">Fields</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../../sources/declarations/methods/higher_order_functions.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../fields.html" title="Fields"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="currying.html" title="Currying"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Scala Style Guide v1.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Declarations</a> &raquo;</li>
+          <li><a href="index.html" >Methods</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Scala Community.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+    </div>
+  </body>
+</html>

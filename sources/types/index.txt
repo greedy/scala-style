@@ -1,0 +1,10 @@
+Types
+=====
+
+.. toctree::
+
+   inference/index
+   annotations
+   ascription
+   functions/index
+   structural_types

@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Comprehensions &mdash; Scala Style Guide v1.0 documentation</title>
+    <link rel="stylesheet" href="../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <link rel="top" title="Scala Style Guide v1.0 documentation" href="../index.html" />
+    <link rel="up" title="Control Structures" href="index.html" />
+    <link rel="next" title="Trivial Conditionals" href="trivial_conditionals.html" />
+    <link rel="prev" title="Curly-Braces" href="curly_braces.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="trivial_conditionals.html" title="Trivial Conditionals"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="curly_braces.html" title="Curly-Braces"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Control Structures</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="comprehensions">
+<h1>Comprehensions<a class="headerlink" href="#comprehensions" title="Permalink to this headline">¶</a></h1>
+<p>Scala has the ability to represent <tt class="docutils literal"><span class="pre">for</span></tt>-comprehensions with more than one
+generator (usually, more than one <tt class="docutils literal"><span class="pre">&lt;-</span></tt> symbol).  In such cases, there are two
+alternative syntaxes which may be used:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// wrong!</span>
+<span class="k">for</span> <span class="o">(</span><span class="n">x</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">rows</span><span class="o">;</span> <span class="n">y</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">files</span><span class="o">)</span>
+  <span class="k">yield</span> <span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span>
+
+<span class="c1">// right!</span>
+<span class="k">for</span> <span class="o">{</span>
+  <span class="n">x</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">rows</span>
+  <span class="n">y</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">files</span>
+<span class="o">}</span> <span class="k">yield</span> <span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>While the latter style is more verbose, it is generally considered easier to read
+and more &#8220;scalable&#8221; (meaning that it does not become obfuscated as the complexity
+of the comprehension increases).  You should prefer this form for all
+<tt class="docutils literal"><span class="pre">for</span></tt>-comprehensions of more than one generator.  Comprehensions with only a
+single generator (e.g. <tt class="docutils literal"><span class="pre">for</span> <span class="pre">(i</span> <span class="pre">&lt;-</span> <span class="pre">0</span> <span class="pre">to</span> <span class="pre">10)</span> <span class="pre">yield</span> <span class="pre">i</span></tt>) should use the first
+form (parentheses rather than curly braces).</p>
+<p>The exceptions to this rule are <tt class="docutils literal"><span class="pre">for</span></tt>-comprehensions which lack a <tt class="docutils literal"><span class="pre">yield</span></tt>
+clause.  In such cases, the construct is actually a loop rather than a functional
+comprehension and it is usually more readable to string the generators together
+between parentheses rather than using the syntactically-confusing <tt class="docutils literal"><span class="pre">}</span> <span class="pre">{</span></tt>
+construct:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// wrong!</span>
+<span class="k">for</span> <span class="o">{</span>
+  <span class="n">x</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">rows</span>
+  <span class="n">y</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">files</span>
+<span class="o">}</span> <span class="o">{</span>
+  <span class="n">printf</span><span class="o">(</span><span class="s">&quot;(%d, %d)&quot;</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="c1">// right!</span>
+<span class="k">for</span> <span class="o">(</span><span class="n">x</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">rows</span><span class="o">;</span> <span class="n">y</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">files</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">printf</span><span class="o">(</span><span class="s">&quot;(%d, %d)&quot;</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="curly_braces.html"
+                                  title="previous chapter">Curly-Braces</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="trivial_conditionals.html"
+                                  title="next chapter">Trivial Conditionals</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../sources/control_structures/comprehensions.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="trivial_conditionals.html" title="Trivial Conditionals"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="curly_braces.html" title="Curly-Braces"
+             >previous</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Control Structures</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Scala Community.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+    </div>
+  </body>
+</html>

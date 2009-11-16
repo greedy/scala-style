@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Function Values &mdash; Scala Style Guide v1.0 documentation</title>
+    <link rel="stylesheet" href="../../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <link rel="top" title="Scala Style Guide v1.0 documentation" href="../../index.html" />
+    <link rel="up" title="Declarations" href="../index.html" />
+    <link rel="next" title="Spacing" href="spacing.html" />
+    <link rel="prev" title="Fields" href="../fields.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="spacing.html" title="Spacing"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../fields.html" title="Fields"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Scala Style Guide v1.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Declarations</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-values">
+<h1>Function Values<a class="headerlink" href="#function-values" title="Permalink to this headline">¶</a></h1>
+<p>Scala provides a number of different syntactic options for declaring function
+values.  For example, the following declarations are exactly equivalent:</p>
+<ol class="arabic simple">
+<li><tt class="docutils literal"><span class="pre">val</span> <span class="pre">f1</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">(a:</span> <span class="pre">Int,</span> <span class="pre">b:</span> <span class="pre">Int)</span> <span class="pre">=&gt;</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">}</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">val</span> <span class="pre">f2</span> <span class="pre">=</span> <span class="pre">(a:</span> <span class="pre">Int,</span> <span class="pre">b:</span> <span class="pre">Int)</span> <span class="pre">=&gt;</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">val</span> <span class="pre">f3</span> <span class="pre">=</span> <span class="pre">(_:</span> <span class="pre">Int)</span> <span class="pre">+</span> <span class="pre">(_:</span> <span class="pre">Int)</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">val</span> <span class="pre">f4:</span> <span class="pre">(Int,</span> <span class="pre">Int)</span> <span class="pre">=&gt;</span> <span class="pre">Int</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">_</span> <span class="pre">+</span> <span class="pre">_</span> <span class="pre">}</span></tt></li>
+</ol>
+<p>Of these styles, (1) and (4) are to be preferred at all times.  (2) appears shorter
+in this example, but whenever the function value spans multiple lines (as is
+normally the case), this syntax becomes extremely unweildy.  Similarly, (3) is
+concise, but obtuse.  It is difficult for the untrained eye to decipher the fact
+that this is even producing a function value.</p>
+<p>When styles (1) and (4) are used exclusively, it becomes very easy to distinguish
+places in the source code where function values are used.  Both styles make use
+of curly braces (<tt class="docutils literal"><span class="pre">{}</span></tt>), allowing those characters to be a visual cue that a
+function value may be involved at some level.</p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="spacing.html">Spacing</a></li>
+<li class="toctree-l1"><a class="reference external" href="multi_expression_functions.html">Multi-Expression Functions</a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="../fields.html"
+                                  title="previous chapter">Fields</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="spacing.html"
+                                  title="next chapter">Spacing</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../../sources/declarations/function_values/index.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="spacing.html" title="Spacing"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../fields.html" title="Fields"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Scala Style Guide v1.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Declarations</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Scala Community.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Curly-Braces &mdash; Scala Style Guide v1.0 documentation</title>
+    <link rel="stylesheet" href="../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <link rel="top" title="Scala Style Guide v1.0 documentation" href="../index.html" />
+    <link rel="up" title="Control Structures" href="index.html" />
+    <link rel="next" title="Comprehensions" href="comprehensions.html" />
+    <link rel="prev" title="Control Structures" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="comprehensions.html" title="Comprehensions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Control Structures"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Control Structures</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="curly-braces">
+<h1>Curly-Braces<a class="headerlink" href="#curly-braces" title="Permalink to this headline">¶</a></h1>
+<p>Curly-braces should be omitted in cases where the control structure represents
+a pure-functional operation and all branches of the control structure (relevant
+to <tt class="docutils literal"><span class="pre">if</span></tt>/<tt class="docutils literal"><span class="pre">else</span></tt>) are single-line expressions.  Remember the following guidelines:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">if</span></tt> - Omit braces if you have an <tt class="docutils literal"><span class="pre">else</span></tt> clause.  Otherwise, surround the
+contents with curly braces even if the contents are only a single line.</li>
+<li><tt class="docutils literal"><span class="pre">while</span></tt> - Never omit braces (<tt class="docutils literal"><span class="pre">while</span></tt> cannot be used in a pure-functional manner).</li>
+<li><tt class="docutils literal"><span class="pre">for</span></tt> - Omit braces if you have a <tt class="docutils literal"><span class="pre">yield</span></tt> clause.  Otherwise, surround the
+contents with curly-braces, even if the contents are only a single line.</li>
+<li><tt class="docutils literal"><span class="pre">case</span></tt> - Omit braces if the <tt class="docutils literal"><span class="pre">case</span></tt> expression fits on a single line.  Otherwise,
+use curly braces for clarity (even though they are not <em>required</em> by the parser).</li>
+</ul>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">news</span> <span class="k">=</span> <span class="k">if</span> <span class="o">(</span><span class="n">foo</span><span class="o">)</span>
+  <span class="n">goodNews</span><span class="o">()</span>
+<span class="k">else</span>
+  <span class="n">badNews</span><span class="o">()</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">foo</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">println</span><span class="o">(</span><span class="s">&quot;foo was true&quot;</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="n">news</span> <span class="k">match</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="s">&quot;good&quot;</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="s">&quot;Good news!&quot;</span><span class="o">)</span>
+  <span class="k">case</span> <span class="s">&quot;bad&quot;</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="s">&quot;Bad news!&quot;</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="index.html"
+                                  title="previous chapter">Control Structures</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="comprehensions.html"
+                                  title="next chapter">Comprehensions</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../sources/control_structures/curly_braces.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="comprehensions.html" title="Comprehensions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Control Structures"
+             >previous</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Control Structures</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Scala Community.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+    </div>
+  </body>
+</html>

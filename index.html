@@ -1,17 +1,48 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
-<title>Scala Style Guide</title>
-<link rel="stylesheet" href="styles.css" type="text/css" />
-</head>
-<body>
-<div class="document" id="scala-style-guide">
-<h1 class="title">Scala Style Guide</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<!-- :mode=rest: -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Scala Style Guide &mdash; Scala Style Guide v1.0 documentation</title>
+    <link rel="stylesheet" href="static/default.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <link rel="top" title="Scala Style Guide v1.0 documentation" href="" />
+    <link rel="next" title="Overview" href="overview.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="overview.html" title="Overview"
+             accesskey="N">next</a> |</li>
+        <li><a href="">Scala Style Guide v1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="scala-style-guide">
+<h1>Scala Style Guide<a class="headerlink" href="#scala-style-guide" title="Permalink to this headline">¶</a></h1>
 <p>In lieu of an official style guide from EPFL, or even an unofficial guide from
 a community site like Artima, this document is intended to outline some basic
 Scala stylistic guidelines which should be followed with more or less fervency.
@@ -19,1136 +50,125 @@ Wherever possible, this guide attempts to detail <em>why</em> a particular style
 encouraged and how it relates to other alternatives. As with all style guides,
 treat this document as a list of rules to be broken. There are certainly times
 when alternative styles should be preferred over the ones given here.</p>
-<p>This document is available in the following formats:</p>
+<p>Contents:</p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference external" href="indentation/index.html">Indentation</a><ul>
+<li class="toctree-l2"><a class="reference external" href="indentation/line_wrapping.html">Line Wrapping</a></li>
+<li class="toctree-l2"><a class="reference external" href="indentation/methods_with_numerous_arguments.html">Methods with Numerous Arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="naming_conventions/index.html">Naming Conventions</a><ul>
+<li class="toctree-l2"><a class="reference external" href="naming_conventions/classes_traits.html">Classes/Traits</a></li>
+<li class="toctree-l2"><a class="reference external" href="naming_conventions/objects.html">Objects</a></li>
+<li class="toctree-l2"><a class="reference external" href="naming_conventions/packages.html">Packages</a></li>
+<li class="toctree-l2"><a class="reference external" href="naming_conventions/methods/index.html">Methods</a></li>
+<li class="toctree-l2"><a class="reference external" href="naming_conventions/fields.html">Fields</a></li>
+<li class="toctree-l2"><a class="reference external" href="naming_conventions/type_parameters/index.html">Type Parameters (generics)</a></li>
+<li class="toctree-l2"><a class="reference external" href="naming_conventions/type_aliases.html">Type Aliases</a></li>
+<li class="toctree-l2"><a class="reference external" href="naming_conventions/annotations.html">Annotations</a></li>
+<li class="toctree-l2"><a class="reference external" href="naming_conventions/special_note_on_brevity.html">Special Note on Brevity</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="types/index.html">Types</a><ul>
+<li class="toctree-l2"><a class="reference external" href="types/inference/index.html">Inference</a></li>
+<li class="toctree-l2"><a class="reference external" href="types/annotations.html">Annotations</a></li>
+<li class="toctree-l2"><a class="reference external" href="types/ascription.html">Ascription</a></li>
+<li class="toctree-l2"><a class="reference external" href="types/functions/index.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference external" href="types/structural_types.html">Structural Types</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="nested_blocks/index.html">Nested Blocks</a><ul>
+<li class="toctree-l2"><a class="reference external" href="nested_blocks/curly_braces.html">Curly Braces</a></li>
+<li class="toctree-l2"><a class="reference external" href="nested_blocks/parentheses.html">Parentheses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="declarations/index.html">Declarations</a><ul>
+<li class="toctree-l2"><a class="reference external" href="declarations/methods/index.html">Methods</a></li>
+<li class="toctree-l2"><a class="reference external" href="declarations/fields.html">Fields</a></li>
+<li class="toctree-l2"><a class="reference external" href="declarations/function_values/index.html">Function Values</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="control_structures/index.html">Control Structures</a><ul>
+<li class="toctree-l2"><a class="reference external" href="control_structures/curly_braces.html">Curly-Braces</a></li>
+<li class="toctree-l2"><a class="reference external" href="control_structures/comprehensions.html">Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference external" href="control_structures/trivial_conditionals.html">Trivial Conditionals</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="method_invocation/index.html">Method Invocation</a><ul>
+<li class="toctree-l2"><a class="reference external" href="method_invocation/arity0/index.html">Arity-0</a></li>
+<li class="toctree-l2"><a class="reference external" href="method_invocation/arity1/index.html">Arity-1</a></li>
+<li class="toctree-l2"><a class="reference external" href="method_invocation/operators.html">Operators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="files/index.html">Files</a><ul>
+<li class="toctree-l2"><a class="reference external" href="files/multi_unit_files.html">Multi-Unit Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>HTML at <a class="reference external" href="http://davetron5000.github.com/scala-style">http://davetron5000.github.com/scala-style</a></li>
-<li>PDF at  <a class="reference external" href="http://davetron5000.github.com/scala-style/ScalaStyleGuide.pdf">http://davetron5000.github.com/scala-style/ScalaStyleGuide.pdf</a></li>
-<li>ReStructured Text source at <a class="reference external" href="http://www.github.com/davetron5000/scala-style">http://www.github.com/davetron5000/scala-style</a></li>
+<li><a class="reference external" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference external" href="search.html"><em>Search Page</em></a></li>
 </ul>
-<div class="contents topic" id="table-of-contents">
-<p class="topic-title first">Table of Contents</p>
-<ul class="auto-toc simple">
-<li><a class="reference internal" href="#overview" id="id11">1&nbsp;&nbsp;&nbsp;Overview</a></li>
-<li><a class="reference internal" href="#indentation" id="id12">2&nbsp;&nbsp;&nbsp;Indentation</a><ul class="auto-toc">
-<li><a class="reference internal" href="#line-wrapping" id="id13">2.1&nbsp;&nbsp;&nbsp;Line Wrapping</a></li>
-<li><a class="reference internal" href="#methods-with-numerous-arguments" id="id14">2.2&nbsp;&nbsp;&nbsp;Methods with Numerous Arguments</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#naming-conventions" id="id15">3&nbsp;&nbsp;&nbsp;Naming Conventions</a><ul class="auto-toc">
-<li><a class="reference internal" href="#classes-traits" id="id16">3.1&nbsp;&nbsp;&nbsp;Classes/Traits</a></li>
-<li><a class="reference internal" href="#objects" id="id17">3.2&nbsp;&nbsp;&nbsp;Objects</a></li>
-<li><a class="reference internal" href="#packages" id="id18">3.3&nbsp;&nbsp;&nbsp;Packages</a></li>
-<li><a class="reference internal" href="#methods" id="id19">3.4&nbsp;&nbsp;&nbsp;Methods</a></li>
-<li><a class="reference internal" href="#fields" id="id20">3.5&nbsp;&nbsp;&nbsp;Fields</a></li>
-<li><a class="reference internal" href="#type-parameters-generics" id="id21">3.6&nbsp;&nbsp;&nbsp;Type Parameters (generics)</a></li>
-<li><a class="reference internal" href="#type-aliases" id="id22">3.7&nbsp;&nbsp;&nbsp;Type Aliases</a></li>
-<li><a class="reference internal" href="#annotations" id="id23">3.8&nbsp;&nbsp;&nbsp;Annotations</a></li>
-<li><a class="reference internal" href="#special-note-on-brevity" id="id24">3.9&nbsp;&nbsp;&nbsp;Special Note on Brevity</a></li>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">Scala Style Guide</a><ul>
 </ul>
 </li>
-<li><a class="reference internal" href="#types" id="id25">4&nbsp;&nbsp;&nbsp;Types</a><ul class="auto-toc">
-<li><a class="reference internal" href="#inference" id="id26">4.1&nbsp;&nbsp;&nbsp;Inference</a></li>
-<li><a class="reference internal" href="#id2" id="id27">4.2&nbsp;&nbsp;&nbsp;Annotations</a></li>
-<li><a class="reference internal" href="#ascription" id="id28">4.3&nbsp;&nbsp;&nbsp;Ascription</a></li>
-<li><a class="reference internal" href="#functions" id="id29">4.4&nbsp;&nbsp;&nbsp;Functions</a></li>
-<li><a class="reference internal" href="#structural-types" id="id30">4.5&nbsp;&nbsp;&nbsp;Structural Types</a></li>
+<li><a class="reference external" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
-</li>
-<li><a class="reference internal" href="#nested-blocks" id="id31">5&nbsp;&nbsp;&nbsp;Nested Blocks</a><ul class="auto-toc">
-<li><a class="reference internal" href="#curly-braces" id="id32">5.1&nbsp;&nbsp;&nbsp;Curly Braces</a></li>
-<li><a class="reference internal" href="#id3" id="id33">5.2&nbsp;&nbsp;&nbsp;Parentheses</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#declarations" id="id34">6&nbsp;&nbsp;&nbsp;Declarations</a><ul class="auto-toc">
-<li><a class="reference internal" href="#id4" id="id35">6.1&nbsp;&nbsp;&nbsp;Methods</a></li>
-<li><a class="reference internal" href="#id5" id="id36">6.2&nbsp;&nbsp;&nbsp;Fields</a></li>
-<li><a class="reference internal" href="#id6" id="id37">6.3&nbsp;&nbsp;&nbsp;Function Values</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#control-structures" id="id38">7&nbsp;&nbsp;&nbsp;Control Structures</a><ul class="auto-toc">
-<li><a class="reference internal" href="#id7" id="id39">7.1&nbsp;&nbsp;&nbsp;Curly-Braces</a></li>
-<li><a class="reference internal" href="#comprehensions" id="id40">7.2&nbsp;&nbsp;&nbsp;Comprehensions</a></li>
-<li><a class="reference internal" href="#trivial-conditionals" id="id41">7.3&nbsp;&nbsp;&nbsp;Trivial Conditionals</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#method-invocation" id="id42">8&nbsp;&nbsp;&nbsp;Method Invocation</a><ul class="auto-toc">
-<li><a class="reference internal" href="#arity-0" id="id43">8.1&nbsp;&nbsp;&nbsp;Arity-0</a></li>
-<li><a class="reference internal" href="#id8" id="id44">8.2&nbsp;&nbsp;&nbsp;Arity-1</a></li>
-<li><a class="reference internal" href="#id10" id="id45">8.3&nbsp;&nbsp;&nbsp;Operators</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#files" id="id46">9&nbsp;&nbsp;&nbsp;Files</a><ul class="auto-toc">
-<li><a class="reference internal" href="#multi-unit-files" id="id47">9.1&nbsp;&nbsp;&nbsp;Multi-Unit Files</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="section" id="overview">
-<h1><a class="toc-backref" href="#table-of-contents">1&nbsp;&nbsp;&nbsp;Overview</a></h1>
-<p>Generally speaking, Scala seeks to mimic Java conventions to ease interoperability.
-When in doubt regarding the idiomatic way to express a particular concept, adopt
-conventions and idioms from the following languages (in this order):</p>
-<ul class="simple">
-<li>Java</li>
-<li><a class="reference external" href="http://en.wikipedia.org/wiki/Standard_ML">Standard ML</a></li>
-<li>Haskell</li>
-<li>C#</li>
-<li>OCaml</li>
-<li>Ruby</li>
-<li>Python</li>
-</ul>
-<p>For example, you should use Java's naming conventions for classes and methods,
-but SML's conventions for type annotation, Haskell's conventions for type
-parameter naming (except upper-case rather than lower) and Ruby's conventions for
-non-boolean accessor methods.  Scala really is a hybrid language!</p>
-</div>
-<div class="section" id="indentation">
-<h1><a class="toc-backref" href="#table-of-contents">2&nbsp;&nbsp;&nbsp;Indentation</a></h1>
-<p>Indentation should follow the &quot;2-space convention&quot;.  Thus, instead of indenting
-like this:</p>
-<pre class="literal-block">
-// wrong!
-class Foo {
-    def bar = ...
-}
-</pre>
-<p>You should indent like this:</p>
-<pre class="literal-block">
-// right!
-class Foo {
-  def bar = ..
-}
-</pre>
-<p>The Scala language encourages a startling amount of nested scopes and logical
-blocks (function values and such).  Do yourself a favor and don't penalize yourself
-syntactically for opening up a new block.  Coming from Java, this style does take
-a bit of getting used to, but it is well worth the effort.</p>
-<div class="section" id="line-wrapping">
-<h2><a class="toc-backref" href="#table-of-contents">2.1&nbsp;&nbsp;&nbsp;Line Wrapping</a></h2>
-<p>There are times when a single expression reaches a length where it becomes
-unreadable to keep it confined to a single line (usually that length is anywhere
-above 80 characters).  In such cases, the <em>preferred</em> approach is to simply
-split the expression up into multiple expressions by assigning intermediate results
-to values or by using the <a class="reference external" href="http://paste.pocoo.org/show/134013/">pipeline operator</a>.  However, this is not always a
-practical solution.</p>
-<p>When it is absolutely necessary to wrap an expression across more than one line,
-each successive line should be indented two spaces from the <em>first</em>.  Also
-remember that Scala requires each &quot;wrap line&quot; to either have an unclosed
-parenthetical or to end with an infix binary function or operator in which the
-right parameter is not given:</p>
-<pre class="literal-block">
-val result = 1 + 2 + 3 + 4 + 5 + 6 +
-  7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 +
-  15 + 16 + 17 + 18 + 19 + 20
-</pre>
-<p>Without this trailing operator, Scala will infer a semi-colon at the end of a
-line which was intended to wrap, throwing off the compilation sometimes without
-even so much as a warning.</p>
-</div>
-<div class="section" id="methods-with-numerous-arguments">
-<h2><a class="toc-backref" href="#table-of-contents">2.2&nbsp;&nbsp;&nbsp;Methods with Numerous Arguments</a></h2>
-<p>When calling a method which takes numerous arguments (in the range of five or
-more), it is often necessary to wrap the method invocation onto multiple lines.
-In such cases, the wrapped lines should be indented so that each parameter lines
-up with the first:</p>
-<pre class="literal-block">
-foo(someVeryLongFieldName,
-    andAnotherVeryLongFieldName,
-    &quot;this is a string&quot;,
-    3.1415)
-</pre>
-<p>Great care should be taken to avoid these sorts of invocations well into the
-length of the line.  More specifically, such an invocation should be avoided
-when each parameter would have to be indented more than 50 spaces to achieve
-alignment.  In such cases, the invocation itself should be moved to the next
-line and indented two spaces:</p>
-<pre class="literal-block">
-// right!
-val myOnerousAndLongFieldNameWithNoRealPoint =
-  foo(someVeryLongFieldName,
-      andAnotherVeryLongFieldName,
-      &quot;this is a string&quot;,
-      3.1415)
 
-// wrong!
-val myOnerousAndLongFieldNameWithNoRealPoint = foo(someVeryLongFieldName,
-                                                   andAnotherVeryLongFieldName,
-                                                   &quot;this is a string&quot;,
-                                                   3.1415)
-</pre>
-<p>Better yet, just try to avoid any method which takes more than two or three
-parameters!</p>
-</div>
-</div>
-<div class="section" id="naming-conventions">
-<h1><a class="toc-backref" href="#table-of-contents">3&nbsp;&nbsp;&nbsp;Naming Conventions</a></h1>
-<p>Generally speaking, Scala uses &quot;camelCase&quot; naming conventions.  That is, each
-word (except possibly the first) is delimited by capitalizing its first letter.
-Underscores (<tt class="docutils literal"><span class="pre">_</span></tt>) are <em>heavily</em> discouraged as they have special meaning within
-the Scala syntax.  Please note that there are a few important exceptions to this
-guideline (as given below).</p>
-<div class="section" id="classes-traits">
-<h2><a class="toc-backref" href="#table-of-contents">3.1&nbsp;&nbsp;&nbsp;Classes/Traits</a></h2>
-<p>Classes should be named in the camelCase style with the very first letter of the
-name capitalized:</p>
-<pre class="literal-block">
-class MyFairLady
-</pre>
-<p>This mimics the Java naming convention for classes.</p>
-</div>
-<div class="section" id="objects">
-<h2><a class="toc-backref" href="#table-of-contents">3.2&nbsp;&nbsp;&nbsp;Objects</a></h2>
-<p>Objects follow the class naming convention (camelCase with a capital first letter)
-except when attempting to mimic a package.  This is a fairly rare case, but it
-does come up on occaision:</p>
-<pre class="literal-block">
-object ast {
-  sealed trait Expr
-
-  case class Plus(e1: Expr, e2: Expr) extends Expr
-  ...
-}
-</pre>
-<p>In <em>all</em> other cases, objects should be named according to the class naming
-convention.</p>
-</div>
-<div class="section" id="packages">
-<h2><a class="toc-backref" href="#table-of-contents">3.3&nbsp;&nbsp;&nbsp;Packages</a></h2>
-<p>Scala packages should follow the Java package naming conventions:</p>
-<pre class="literal-block">
-// right!
-package com.novell.coolness
-
-// wrong!
-package coolness
-</pre>
-<p>Please note that this convention does occaisionally lead to problems when combined
-with Scala's nested packages feature.  For example:</p>
-<pre class="literal-block">
-import net.liftweb._
-</pre>
-<p>This import will actually fail to resolve in some contexts as the <tt class="docutils literal"><span class="pre">net</span></tt> package
-may refer to the <tt class="docutils literal"><span class="pre">java.net</span></tt> package (or similar).  To compensate for this, it
-is often necessary to fully-qualify imports using the <tt class="docutils literal"><span class="pre">_root_</span></tt> directive,
-overriding any nested package resolves:</p>
-<pre class="literal-block">
-import _root_.net.liftweb._
-</pre>
-<p>Do not overuse this directive.  In general, nested package resolves are a good
-thing and very helpful in reducing import clutter.  Using <tt class="docutils literal"><span class="pre">_root_</span></tt> not only
-negates their benefit, but also introduces extra clutter in and of itself.
-Developers using IntelliJ IDEA should be particularly wary as its Scala plugin
-prefixes <em>every</em> import using <tt class="docutils literal"><span class="pre">_root_</span></tt> by default.</p>
-</div>
-<div class="section" id="methods">
-<h2><a class="toc-backref" href="#table-of-contents">3.4&nbsp;&nbsp;&nbsp;Methods</a></h2>
-<p>Textual (alphabetic) names for methods should be in the camelCase style with the
-first letter lower-case:</p>
-<pre class="literal-block">
-def myFairMethod = ...
-</pre>
-<p>This section is not a comprehensive guide to idiomatic methods in Scala.  Further
-information may be found in the method invocation section.</p>
-<div class="section" id="accessors-mutators">
-<h3>3.4.1&nbsp;&nbsp;&nbsp;Accessors/Mutators</h3>
-<p>Scala does <em>not</em> follow the Java convention of prepending <tt class="docutils literal"><span class="pre">set</span></tt>/<tt class="docutils literal"><span class="pre">get</span></tt> to
-mutator and accessor methods (respectively).  Instead, the following conventions
-are used:</p>
-<ul class="simple">
-<li>For accessors of <em>most</em> boolean and non-boolean properties, the name of the
-method should be the name of the property</li>
-<li>For accessors of <em>some</em> boolean properties, the name of the method may be the
-capitalized name of the property with &quot;<tt class="docutils literal"><span class="pre">is</span></tt>&quot; prepended (e.g. <tt class="docutils literal"><span class="pre">isEmpty</span></tt>).
-This should only be the case when no corresponding mutator is provided.  Please
-note that the <a class="reference external" href="http://liftweb.com">Lift</a> convention of appending &quot;<tt class="docutils literal"><span class="pre">_?</span></tt>&quot; to boolean accessors is
-non-standard and not used outside of the Lift framework.</li>
-<li>For mutators, the name of the method should be the name of the property with
-&quot;<tt class="docutils literal"><span class="pre">_=</span></tt>&quot; appended.  As long as a corresponding accessor with that particular
-property name is defined on the enclosing type, this convention will enable
-a call-site mutation syntax which mirrors assignment.</li>
-</ul>
-<pre class="literal-block">
-class Foo {
-
-  def bar = ...
-
-  def bar_=(bar: Bar) {
-    ...
-  }
-
-  def isBaz = ...
-}
-
-val foo = new Foo
-foo.bar             // accessor
-foo.bar = bar2      // mutator
-foo.isBaz           // boolean property
-</pre>
-<p>Quite unfortunately, these conventions fall afoul of the Java convention to name
-the private fields encapsulated by accessors and mutators according to the
-property they represent.  For example:</p>
-<pre class="literal-block">
-public class Company {
-    private String name;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-}
-</pre>
-<p>If we were to attempt to adopt this convention within Scala while observing the
-accessor naming conventions given above, the Scala compiler would complain about
-a naming colision between the <tt class="docutils literal"><span class="pre">name</span></tt> field and the <tt class="docutils literal"><span class="pre">name</span></tt> method.  There are
-a number of ways to avoid this problem and the community has yet to standardize
-on any one of them.  The following illustrates one of the less error-prone
-conventions:</p>
-<pre class="literal-block">
-class Company {
-  private val _name: String = _
-
-  def name = _name
-
-  def name_=(name: String) {
-    _name = name
-  }
-}
-</pre>
-<p>While Hungarian notation is terribly ugly, it does have the advantage of
-disambiguating the <tt class="docutils literal"><span class="pre">_name</span></tt> field without cluttering the identifier.  The
-underscore is in the prefix position rather than the suffix to avoid any danger
-of mistakenly typing <tt class="docutils literal"><span class="pre">name</span> <span class="pre">_</span></tt> instead of <tt class="docutils literal"><span class="pre">name_</span></tt>.  With heavy use of Scala's
-type inference, such a mistake could potentially lead to a very confusing error.</p>
-<p>Note that fields may actually be used in a number of situations where accessors
-and mutators would be required in languages like Java.  Always prefer fields over
-methods when given the choice.</p>
-</div>
-<div class="section" id="parentheses">
-<h3>3.4.2&nbsp;&nbsp;&nbsp;Parentheses</h3>
-<p>Unlike Ruby, Scala attaches significance to whether or not a method is <em>declared</em>
-with parentheses (only applicable to methods of <a class="reference external" href="http://en.wikipedia.org/wiki/Arity">arity</a>-0).  For example:</p>
-<pre class="literal-block">
-def foo1() = ...
-
-def foo2 = ...
-</pre>
-<p>These are different methods at compile-time.  While <tt class="docutils literal"><span class="pre">foo1</span></tt> can be
-called with or without the parentheses, <tt class="docutils literal"><span class="pre">foo2</span></tt> <em>may not</em> be called
-<em>with</em> parentheses.</p>
-<p>Thus, it is actually quite important that proper guidelines be observed regarding
-when it is appropriate to declare a method without parentheses and when it is
-not.</p>
-<p>Methods which act as accessors of any sort (either encapsulating a field or a
-logical property) should be declared <em>without</em> parentheses except if they have side effects.
-While Ruby and Lift use a <tt class="docutils literal"><span class="pre">!</span></tt> to indicate this, the usage of parens is preferred <a class="footnote-reference" href="#dsl-note" id="id1">[1]</a>.</p>
-<p>Further, the callsite should follow the declaration; if declared with parentheses,
-call with parentheses.  While there is temptation to save a few characters,
-if you follow this guideline, your code will be <em>much</em> more readable and
-maintainable.</p>
-<pre class="literal-block">
-// doesn't change state, call as birthdate
-def birthdate = firstName
-
-// updates our internal state, call as age()
-def age() = {
-  _age = updateAge(birthdate)
-  _age
-}
-</pre>
-<table class="docutils footnote" frame="void" id="dsl-note" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Please note that fluid APIs and internal domain-specific languages have a
-tendency to break the guidelines given below for the sake of syntax.  Such
-exceptions should not be considered a violation so much as a time when these
-rules do not apply.  In a DSL, syntax should be paramount over convention.</td></tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="operators">
-<h3>3.4.3&nbsp;&nbsp;&nbsp;Operators</h3>
-<p>Avoid!  Despite the degree to which Scala facilitates this area of API design,
-operator definition should not be undertaken lightly, particularly when the
-operator itself is non-standard (for example, <tt class="docutils literal"><span class="pre">&gt;&gt;#&gt;&gt;</span></tt>).  As a general rule,
-operators have two valid use-cases:</p>
-<ul class="simple">
-<li>Domain-specific languages (e.g. <tt class="docutils literal"><span class="pre">actor1</span> <span class="pre">!</span> <span class="pre">Msg</span></tt>)</li>
-<li>Logically mathematical operations (e.g. <tt class="docutils literal"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></tt> or <tt class="docutils literal"><span class="pre">c</span> <span class="pre">::</span> <span class="pre">d</span></tt>)</li>
-</ul>
-<p>In the former case, operators may be used with impunity so long as the syntax is
-actually beneficial.  However, in the course of standard API design, operators
-should be strictly reserved for purely-functional operations.  Thus, it is
-acceptable to define a <tt class="docutils literal"><span class="pre">&gt;&gt;=</span></tt> operator for joining two monads, but it is not
-acceptable to define a <tt class="docutils literal"><span class="pre">&lt;&lt;</span></tt> operator for writing to an output stream.  The
-former is mathematically well-defined and side-effect free, while the latter is
-neither of these.</p>
-<p>Operator definition should be considered an advanced feature in Scala, to be used
-only by those most well-versed in its pitfalls.  Without care, excessive operator
-overloading can easily transform even the simplest code into symbolic soup.</p>
-</div>
-</div>
-<div class="section" id="fields">
-<h2><a class="toc-backref" href="#table-of-contents">3.5&nbsp;&nbsp;&nbsp;Fields</a></h2>
-<p>Field names should be in camelCase with the first letter lower-case:</p>
-<pre class="literal-block">
-val myFairField = ...
-</pre>
-</div>
-<div class="section" id="type-parameters-generics">
-<h2><a class="toc-backref" href="#table-of-contents">3.6&nbsp;&nbsp;&nbsp;Type Parameters (generics)</a></h2>
-<p>Type parameters are typically a single upper-case letter (from the English
-alphabet).  Conventionally, parameters blindly start at <tt class="docutils literal"><span class="pre">A</span></tt> and ascend up to
-<tt class="docutils literal"><span class="pre">Z</span></tt> as necessary.  This contrasts with the Java convention of using <tt class="docutils literal"><span class="pre">T</span></tt>, <tt class="docutils literal"><span class="pre">K</span></tt>,
-<tt class="docutils literal"><span class="pre">V</span></tt> and <tt class="docutils literal"><span class="pre">E</span></tt>.  For example:</p>
-<pre class="literal-block">
-class List[A] {
-  def map[B](f: A =&gt; B): List[B] = ...
-}
-</pre>
-<div class="section" id="higher-kinds">
-<h3>3.6.1&nbsp;&nbsp;&nbsp;Higher-Kinds</h3>
-<p>While higher-kinds are theoretically no different from regular type parameters
-(except that their <a class="reference external" href="http://en.wikipedia.org/wiki/Kind_(type_theory)">kind</a> is at least <tt class="docutils literal"><span class="pre">*=&gt;*</span></tt> rather than simply <tt class="docutils literal"><span class="pre">*</span></tt>), their
-naming conventions do differ somewhat.  Generally, higher-kinded parameters are
-two upper-case characters, usually repeated.  For example:</p>
-<pre class="literal-block">
-class HOMap[AA[_], BB[_]] { ... }
-</pre>
-<p>It is also (sometimes) acceptable to give full, descriptive names to higher-kinded
-parameters.  In this case, use all-caps to make it clear you are not referring
-to a class or trait.  Thus, the following would be an equally valid definition of <tt class="docutils literal"><span class="pre">HOMap</span></tt>:</p>
-<pre class="literal-block">
-class HOMap[KEY[_], VALUE[_]] { ... }
-</pre>
-<p>In such cases, the type naming conventions should be observed.</p>
-</div>
-</div>
-<div class="section" id="type-aliases">
-<h2><a class="toc-backref" href="#table-of-contents">3.7&nbsp;&nbsp;&nbsp;Type Aliases</a></h2>
-<p>Type aliases follow the same naming conventions as classes.  For example:</p>
-<pre class="literal-block">
-type StringList = List[String]
-</pre>
-</div>
-<div class="section" id="annotations">
-<h2><a class="toc-backref" href="#table-of-contents">3.8&nbsp;&nbsp;&nbsp;Annotations</a></h2>
-<p>Annotations, such as <tt class="docutils literal"><span class="pre">&#64;volatile</span></tt> should be in camel-case, with the first letter
-being lower case:</p>
-<pre class="literal-block">
-class cloneable extends StaticAnnotation
-</pre>
-<p>This convention is used throughout the Scala library, even though
-it is not consistent with Java annotations.</p>
-</div>
-<div class="section" id="special-note-on-brevity">
-<h2><a class="toc-backref" href="#table-of-contents">3.9&nbsp;&nbsp;&nbsp;Special Note on Brevity</a></h2>
-<p>Because of Scala's roots in the functional languages, it is quite normal for
-local field names to be extremely brief:</p>
-<pre class="literal-block">
-def add(a: Int, b: Int) = a + b
-</pre>
-<p>While this would be bad practice in languages like Java, it is <em>good</em> practice
-in Scala.  This convention works because properly-written Scala methods are
-quite short, only spanning a single expression and rarely going beyond a few
-lines.  Very few local fields are ever used (including parameters), and so there
-is no need to contrive long, descriptive names.  This convention substantially
-improves the brevity of most Scala sources.</p>
-<p>This convention only applies to method parameters and local fields.  Anything
-which affects the public interface of a class should be given a fully-descriptive
-name.</p>
-</div>
-</div>
-<div class="section" id="types">
-<h1><a class="toc-backref" href="#table-of-contents">4&nbsp;&nbsp;&nbsp;Types</a></h1>
-<div class="section" id="inference">
-<h2><a class="toc-backref" href="#table-of-contents">4.1&nbsp;&nbsp;&nbsp;Inference</a></h2>
-<p>Use type inference as much as possible.  You should almost never annotate the type
-of a <tt class="docutils literal"><span class="pre">val</span></tt> field as their type will be immediately evident in their value:</p>
-<pre class="literal-block">
-val name = &quot;Daniel&quot;
-</pre>
-<p>However, type inference has a way of coming back to haunt you when used on
-non-trivial methods which are part of the public interface.  Just for the sake
-of safety, you should annotate all public methods in your class.</p>
-<div class="section" id="function-values">
-<h3>4.1.1&nbsp;&nbsp;&nbsp;Function Values</h3>
-<p>Function values support a special case of type inference which is worth calling
-out on its own:</p>
-<pre class="literal-block">
-val ls: List[String] = ...
-ls map { str =&gt; str.toInt }
-</pre>
-<p>In cases where Scala already knows the type of the function value we are declaring,
-there is no need to annotate the parameters (in this case, <tt class="docutils literal"><span class="pre">str</span></tt>).  This is an
-intensely helpful inference and should be preferred whenever possible.  Note that
-implicit conversions which operate on function values will nullify this inference,
-forcing the explicit annotation of parameter types.</p>
-</div>
-<div class="section" id="void-methods">
-<h3>4.1.2&nbsp;&nbsp;&nbsp;&quot;Void&quot; Methods</h3>
-<p>The exception to the &quot;annotate everything public&quot; rule is methods which return
-<tt class="docutils literal"><span class="pre">Unit</span></tt>.  <em>Any</em> method which returns <tt class="docutils literal"><span class="pre">Unit</span></tt> should be declared using Scala's
-syntactic sugar for that case:</p>
-<pre class="literal-block">
-def printName() {
-  println(&quot;Novell&quot;)
-}
-</pre>
-<p>This compiles into:</p>
-<pre class="literal-block">
-def printName(): Unit = {
-  println(&quot;Novell&quot;)
-}
-</pre>
-<p>You should prefer the former style (without the annotation or the equals sign)
-as it reduces errors and improves readability.  For the record, it is also
-possible (and encouraged!) to declare abstract methods returning <tt class="docutils literal"><span class="pre">Unit</span></tt> with an
-analogous syntax:</p>
-<pre class="literal-block">
-def printName()         // abstract def for printName(): Unit
-</pre>
-</div>
-</div>
-<div class="section" id="id2">
-<h2><a class="toc-backref" href="#table-of-contents">4.2&nbsp;&nbsp;&nbsp;Annotations</a></h2>
-<p>Type annotations should be patterned according to the following template:</p>
-<pre class="literal-block">
-value: Type
-</pre>
-<p>This is the style adopted by most of the Scala standard library and all of
-Martin Odersky's examples.  The space between value and type helps the eye in
-accurately parsing the syntax.  The reason to place the colon at the end of the
-value rather than the beginning of the type is to avoid confusion in cases such
-as this one:</p>
-<pre class="literal-block">
-value :::
-</pre>
-<p>This is actually valid Scala, declaring a value to be of type <tt class="docutils literal"><span class="pre">::</span></tt>.  Obviously,
-the prefix-style annotation colon muddles things greatly.  The other option is
-the &quot;two space&quot; syntax:</p>
-<pre class="literal-block">
-value : Type
-</pre>
-<p>This syntax is preferable to the prefix-style, but it is not widely adopted due
-to its increased verbosity.</p>
-</div>
-<div class="section" id="ascription">
-<h2><a class="toc-backref" href="#table-of-contents">4.3&nbsp;&nbsp;&nbsp;Ascription</a></h2>
-<p>Type ascription is often confused with type annotation, as the syntax in Scala
-is identical.  The following are examples of ascription:</p>
-<ul class="simple">
-<li><tt class="docutils literal"><span class="pre">Nil:</span> <span class="pre">List[String]</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">Set(values:</span> <span class="pre">_*)</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">&quot;Daniel&quot;:</span> <span class="pre">AnyRef</span></tt></li>
-</ul>
-<p>Ascription is basically just an up-cast performed at compile-time for the sake of
-the type checker.  Its use is not common, but it does happen on occasion.  The
-most often seen case of ascription is invoking a varargs method with a single
-<tt class="docutils literal"><span class="pre">Seq</span></tt> parameter.  This is done by ascribing the <tt class="docutils literal"><span class="pre">_*</span></tt> type (as in the second
-example above).</p>
-<p>Ascription follows the type annotation conventions; a space follows the colon.</p>
-</div>
-<div class="section" id="functions">
-<h2><a class="toc-backref" href="#table-of-contents">4.4&nbsp;&nbsp;&nbsp;Functions</a></h2>
-<p>Function types should be declared with a space between the parameter type, the
-arrow and the return type:</p>
-<pre class="literal-block">
-def foo(f: Int =&gt; String) = ...
-
-def bar(f: (Boolean, Double) =&gt; List[String]) = ...
-</pre>
-<p>Parentheses should be omitted wherever possible (e.g. methods of arity-1, such
-as <tt class="docutils literal"><span class="pre">Int</span> <span class="pre">=&gt;</span> <span class="pre">String</span></tt>).</p>
-<div class="section" id="arity-1">
-<h3>4.4.1&nbsp;&nbsp;&nbsp;Arity-1</h3>
-<p>Scala has a special syntax for declaring types for functions of arity-1.  For
-example:</p>
-<pre class="literal-block">
-def map[B](f: A =&gt; B) = ...
-</pre>
-<p>Specifically, the parentheses may be omitted from the parameter type.  Thus, we
-did <em>not</em> declare <tt class="docutils literal"><span class="pre">f</span></tt> to be of type &quot;<tt class="docutils literal"><span class="pre">(A)</span> <span class="pre">=&gt;</span> <span class="pre">B</span></tt>, as this would have been
-needlessly verbose.  Consider the more extreme example:</p>
-<pre class="literal-block">
-// wrong!
-def foo(f: (Int) =&gt; (String) =&gt; (Boolean) =&gt; Double) = ...
-
-// right!
-def foo(f: Int =&gt; String =&gt; Boolean =&gt; Double) = ...
-</pre>
-<p>By omitting the parentheses, we have saved six whole characters and dramatically
-improved the readability of the type expression.</p>
-</div>
-</div>
-<div class="section" id="structural-types">
-<h2><a class="toc-backref" href="#table-of-contents">4.5&nbsp;&nbsp;&nbsp;Structural Types</a></h2>
-<p>Structural types should be declared on a single line if they are less than 50
-characters in length.  Otherwise, they should be split across multiple lines and
-(usually) assigned to their own type alias:</p>
-<pre class="literal-block">
-// wrong!
-def foo(a: { def bar(a: Int, b: Int): String; val baz: List[String =&gt; String] }) = ...
-
-// right!
-private type FooParam = {
-  val baz: List[String =&gt; String]
-  def bar(a: Int, b: Int): String
-}
-
-def foo(a: FooParam) = ...
-</pre>
-<p>Simpler structural types (under 50 characters) may be declared and used inline:</p>
-<pre class="literal-block">
-def foo(a: { val bar: String }) = ...
-</pre>
-<p>When declaring structural types inline, each member should be separated by a
-semi-colon and a single space, the opening brace should be <em>followed</em> by a space
-while the closing brace should be <em>preceded</em> by a space (as demonstrated in both
-examples above).</p>
-</div>
-</div>
-<div class="section" id="nested-blocks">
-<h1><a class="toc-backref" href="#table-of-contents">5&nbsp;&nbsp;&nbsp;Nested Blocks</a></h1>
-<div class="section" id="curly-braces">
-<h2><a class="toc-backref" href="#table-of-contents">5.1&nbsp;&nbsp;&nbsp;Curly Braces</a></h2>
-<p>Opening curly braces (<tt class="docutils literal"><span class="pre">{</span></tt>) must be on the same line as the declaration they
-represent:</p>
-<pre class="literal-block">
-def foo = {
-  ...
-}
-</pre>
-<p>Technically, Scala's parser <em>does</em> support GNU-style notation with opening braces
-on the line following the declaration.  However, the parser is not terribly
-predictable when dealing with this style due to the way in which semi-colon
-inference is implemented.  Many headaches will be saved by simply following the
-curly brace convention demonstrated above.</p>
-</div>
-<div class="section" id="id3">
-<h2><a class="toc-backref" href="#table-of-contents">5.2&nbsp;&nbsp;&nbsp;Parentheses</a></h2>
-<p>In the rare cases when parenthetical blocks wrap across lines, the opening and
-closing parentheses should be unspaced and kept on the same lines as their content
-(Lisp-style):</p>
-<pre class="literal-block">
-(this + is a very ++ long *
-  expression)
-</pre>
-<p>The only exception to this rule is when defining grammars using parser combinators:</p>
-<pre class="literal-block">
-lazy val e: Parser[Int] = (
-    e ~ &quot;+&quot; ~ e  ^^ { (e1, _, e2) =&gt; e1 + e2 }
-  | e ~ &quot;-&quot; ~ e  ^^ { (e1, _, e2) =&gt; e1 - e2 }
-  | &quot;&quot;&quot;\d+&quot;&quot;&quot;.r  ^^ { _.toInt }
-)
-</pre>
-<p>Parser combinators are an internal DSL, however, meaning that many of these style
-guidelines are inapplicable.</p>
-</div>
-</div>
-<div class="section" id="declarations">
-<h1><a class="toc-backref" href="#table-of-contents">6&nbsp;&nbsp;&nbsp;Declarations</a></h1>
-<p>All class/object/trait members should be declared interleaved with newlines.
-The only exceptions to this rule are <tt class="docutils literal"><span class="pre">var</span></tt> and <tt class="docutils literal"><span class="pre">val</span></tt>.  These may be declared
-without the intervening newline, but only if none of the fields hava scaladoc
-and if all of the fields have simple (max of 20-ish chars, one line) definitions:</p>
-<pre class="literal-block">
-class Foo {
-  val bar = 42
-  val baz = &quot;Daniel&quot;
-
-  def doSomething() { ... }
-
-  def add(x: Int, y: Int) = x + y
-}
-</pre>
-<p>Fields should <em>precede</em> methods in a scope.  The only exception is if the <tt class="docutils literal"><span class="pre">val</span></tt>
-has a block definition (more than one expression) and performs opertions which
-may be deemed &quot;method-like&quot; (e.g. computing the length of a <tt class="docutils literal"><span class="pre">List</span></tt>).  In such
-cases, the non-trivial <tt class="docutils literal"><span class="pre">val</span></tt> may be declared at a later point in the file as
-logical member ordering would dictate.  This rule <em>only</em> applies to <tt class="docutils literal"><span class="pre">val</span></tt> and
-<tt class="docutils literal"><span class="pre">lazy</span> <span class="pre">val</span></tt>!  It becomes very difficult to track changing aliases if <tt class="docutils literal"><span class="pre">var</span></tt>
-declarations are strewn throughout class file.</p>
-<div class="section" id="id4">
-<h2><a class="toc-backref" href="#table-of-contents">6.1&nbsp;&nbsp;&nbsp;Methods</a></h2>
-<p>Methods should be declared according to the following pattern:</p>
-<pre class="literal-block">
-def foo(bar: Baz): Bin = expr
-</pre>
-<p>The only exceptions to this rule are methods which return <tt class="docutils literal"><span class="pre">Unit</span></tt>.  Such methods
-should use Scala's syntactic sugar to avoid accidentally confusing return types:</p>
-<pre class="literal-block">
-def foo(bar: Baz) {       // return type is Unit
-  expr
-}
-</pre>
-<div class="section" id="modifiers">
-<h3>6.1.1&nbsp;&nbsp;&nbsp;Modifiers</h3>
-<p>Method modifiers should be given in the following order (when each is applicable):</p>
-<ol class="arabic simple">
-<li>Annotations, <em>each on their own line</em></li>
-<li>Override modifier (<tt class="docutils literal"><span class="pre">override</span></tt>)</li>
-<li>Access modifier (<tt class="docutils literal"><span class="pre">protected</span></tt>, <tt class="docutils literal"><span class="pre">private</span></tt>)</li>
-<li>Final modifier (<tt class="docutils literal"><span class="pre">final</span></tt>)</li>
-<li><tt class="docutils literal"><span class="pre">def</span></tt></li>
-</ol>
-<pre class="literal-block">
-&#64;Transaction
-&#64;throws(classOf[IOException])
-override protected final def foo() {
-  ...
-}
-</pre>
-</div>
-<div class="section" id="body">
-<h3>6.1.2&nbsp;&nbsp;&nbsp;Body</h3>
-<p>When a method body comprises a single expression which is less than 30 (or so)
-characters, it should be given on a single line with the method:</p>
-<pre class="literal-block">
-def add(a: Int, b: Int) = a + b
-</pre>
-<p>When the method body is a single expression <em>longer</em> than 30 (or so) characters
-but still shorter than 70 (or so) characters, it should be given on the following
-line, indented two spaces:</p>
-<pre class="literal-block">
-def sum(ls: List[String]) =
-  (ls map { _.toInt }).foldLeft(0) { _ + _ }
-</pre>
-<p>The distinction between these two cases is somewhat artificial.  Generally
-speaking, you should choose whichever style is more readable on a case-by-case
-basis.  For example, your method declaration may be very long, while the expression
-body may be quite short.  In such a case, it may be more readable to put the
-expression on the next line rather than making the declaration line unreadably
-long.</p>
-<p>When the body of a method cannot be concisely expressed in a single line or is
-of a non-functional nature (some mutable state, local or otherwise), the body
-must be enclosed in braces:</p>
-<pre class="literal-block">
-def sum(ls: List[String]) = {
-  val ints = ls map { _.toInt }
-  ints.foldLeft(0) { _ + _ }
-}
-</pre>
-<p>Methods which contain a single <tt class="docutils literal"><span class="pre">match</span></tt> expression should be declared in the
-following way:</p>
-<pre class="literal-block">
-// right!
-def sum(ls: List[Int]): Int = ls match {
-  case hd :: tail =&gt; hd + sum(tail)
-  case Nil =&gt; 0
-}
-</pre>
-<p><em>Not</em> like this:</p>
-<pre class="literal-block">
-// wrong!
-def sum(ls: List[Int]): Int = {
-  ls match {
-    case hd :: tail =&gt; hd + sum(tail)
-    case Nil =&gt; 0
-  }
-}
-</pre>
-</div>
-<div class="section" id="currying">
-<h3>6.1.3&nbsp;&nbsp;&nbsp;Currying</h3>
-<p>In general, you should only curry functions if there is a good reason to do so.
-Curried functions have a more verbose declaration and invocation syntax and are
-harder for less-experienced Scala developers to understand.  When you do declare
-a curried function, you should take advantage of Scala's syntactic sugar involving
-multiple groups of parentheses:</p>
-<pre class="literal-block">
-// right!
-def add(a: Int)(b: Int) = a + b
-
-// wrong!
-def add(a: Int) = { b: Int =&gt; a + b }
-</pre>
-<p>Scala will compile both of these declarations into the same result.  However,
-the former is slightly easier to read than the latter.</p>
-</div>
-<div class="section" id="higher-order-functions">
-<h3>6.1.4&nbsp;&nbsp;&nbsp;Higher-Order Functions</h3>
-<p>It's worth keeping in mind when declaring higher-order functions the fact that
-Scala allows a somewhat nicer syntax for such functions at call-site when the
-function parameter is curried as the last argument.  For example, this is the
-<tt class="docutils literal"><span class="pre">foldl</span></tt> function in SML:</p>
-<pre class="literal-block">
-fun foldl (f: ('b * 'a) -&gt; 'b) (init: 'b) (ls: 'a list) = ...
-</pre>
-<p>In Scala, the preferred style is the exact inverse:</p>
-<pre class="literal-block">
-def foldLeft[A, B](ls: List[A])(init: B)(f: (B, A) =&gt; B) = ...
-</pre>
-<p>By placing the function parameter <em>last</em>, we have enabled invocation syntax like
-the following:</p>
-<pre class="literal-block">
-foldLeft(List(1, 2, 3, 4))(0) { _ + _ }
-</pre>
-<p>The function value in this invocation is not wrapped in parentheses; it is
-syntactically quite disconnected from the function itself (<tt class="docutils literal"><span class="pre">foldLeft</span></tt>).  This
-style is preferred for its brevity and cleanliness.</p>
-</div>
-</div>
-<div class="section" id="id5">
-<h2><a class="toc-backref" href="#table-of-contents">6.2&nbsp;&nbsp;&nbsp;Fields</a></h2>
-<p>Fields should follow the declaration rules for methods, taking special note of
-access modifier ordering and annotation conventions.</p>
-</div>
-<div class="section" id="id6">
-<h2><a class="toc-backref" href="#table-of-contents">6.3&nbsp;&nbsp;&nbsp;Function Values</a></h2>
-<p>Scala provides a number of different syntactic options for declaring function
-values.  For example, the following declarations are exactly equivalent:</p>
-<ol class="arabic simple">
-<li><tt class="docutils literal"><span class="pre">val</span> <span class="pre">f1</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">(a:</span> <span class="pre">Int,</span> <span class="pre">b:</span> <span class="pre">Int)</span> <span class="pre">=&gt;</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">}</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">val</span> <span class="pre">f2</span> <span class="pre">=</span> <span class="pre">(a:</span> <span class="pre">Int,</span> <span class="pre">b:</span> <span class="pre">Int)</span> <span class="pre">=&gt;</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">val</span> <span class="pre">f3</span> <span class="pre">=</span> <span class="pre">(_:</span> <span class="pre">Int)</span> <span class="pre">+</span> <span class="pre">(_:</span> <span class="pre">Int)</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">val</span> <span class="pre">f4:</span> <span class="pre">(Int,</span> <span class="pre">Int)</span> <span class="pre">=&gt;</span> <span class="pre">Int</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">_</span> <span class="pre">+</span> <span class="pre">_</span> <span class="pre">}</span></tt></li>
-</ol>
-<p>Of these styles, (1) and (4) are to be preferred at all times.  (2) appears shorter
-in this example, but whenever the function value spans multiple lines (as is
-normally the case), this syntax becomes extremely unweildy.  Similarly, (3) is
-concise, but obtuse.  It is difficult for the untrained eye to decipher the fact
-that this is even producing a function value.</p>
-<p>When styles (1) and (4) are used exclusively, it becomes very easy to distinguish
-places in the source code where function values are used.  Both styles make use
-of curly braces (<tt class="docutils literal"><span class="pre">{}</span></tt>), allowing those characters to be a visual cue that a
-function value may be involved at some level.</p>
-<div class="section" id="spacing">
-<h3>6.3.1&nbsp;&nbsp;&nbsp;Spacing</h3>
-<p>You will notice that both (1) and (4) insert spaces after the opening brace and
-before the closing brace.  This extra spacing provides a bit of &quot;breathing room&quot;
-for the contents of the function and makes it easier to distinguish from the
-surrounding code.  There are <em>no</em> cases when this spacing should be omitted.</p>
-</div>
-<div class="section" id="multi-expression-functions">
-<h3>6.3.2&nbsp;&nbsp;&nbsp;Multi-Expression Functions</h3>
-<p>Most function values are less trivial than the examples given above.  Many contain
-more than one expression.  In such cases, it is often more readable to split the
-function value across multiple lines.  When this happens, only style (1) should
-be used.  Style (4) becomes extremely difficult to follow when enclosed in large
-amounts of code.  The declaration itself should loosely follow the declaration
-style for methods, with the opening brace on the same line as the assignment or
-invocation, while the closing brace is on its own line immediately following the
-last line of the function.  Parameters should be on the same line as the opening
-brace, as should the &quot;arrow&quot; (<tt class="docutils literal"><span class="pre">=&gt;</span></tt>):</p>
-<pre class="literal-block">
-val f1 = { (a: Int, b: Int) =&gt;
-  a + b
-}
-</pre>
-<p>As noted earlier, function values should leverage type inference whenever
-possible.</p>
-</div>
-</div>
-</div>
-<div class="section" id="control-structures">
-<h1><a class="toc-backref" href="#table-of-contents">7&nbsp;&nbsp;&nbsp;Control Structures</a></h1>
-<p>All control structures should be written with a space following the defining
-keyword:</p>
-<pre class="literal-block">
-// right!
-if (foo) bar else baz
-for (i &lt;- 0 to 10) { ... }
-while (true) { println(&quot;Hello, World!&quot;) }
-
-// wrong!
-if(foo) bar else baz
-for(i &lt;- 0 to 10) { ... }
-while(true) { println(&quot;Hello, World!&quot;) }
-</pre>
-<div class="section" id="id7">
-<h2><a class="toc-backref" href="#table-of-contents">7.1&nbsp;&nbsp;&nbsp;Curly-Braces</a></h2>
-<p>Curly-braces should be omitted in cases where the control structure represents
-a pure-functional operation and all branches of the control structure (relevant
-to <tt class="docutils literal"><span class="pre">if</span></tt>/<tt class="docutils literal"><span class="pre">else</span></tt>) are single-line expressions.  Remember the following guidelines:</p>
-<ul class="simple">
-<li><tt class="docutils literal"><span class="pre">if</span></tt> - Omit braces if you have an <tt class="docutils literal"><span class="pre">else</span></tt> clause.  Otherwise, surround the
-contents with curly braces even if the contents are only a single line.</li>
-<li><tt class="docutils literal"><span class="pre">while</span></tt> - Never omit braces (<tt class="docutils literal"><span class="pre">while</span></tt> cannot be used in a pure-functional manner).</li>
-<li><tt class="docutils literal"><span class="pre">for</span></tt> - Omit braces if you have a <tt class="docutils literal"><span class="pre">yield</span></tt> clause.  Otherwise, surround the
-contents with curly-braces, even if the contents are only a single line.</li>
-<li><tt class="docutils literal"><span class="pre">case</span></tt> - Omit braces if the <tt class="docutils literal"><span class="pre">case</span></tt> expression fits on a single line.  Otherwise,
-use curly braces for clarity (even though they are not <em>required</em> by the parser).</li>
-</ul>
-<pre class="literal-block">
-val news = if (foo)
-  goodNews()
-else
-  badNews()
-
-if (foo) {
-  println(&quot;foo was true&quot;)
-}
-
-news match {
-  case &quot;good&quot; =&gt; println(&quot;Good news!&quot;)
-  case &quot;bad&quot; =&gt; println(&quot;Bad news!&quot;)
-}
-</pre>
-</div>
-<div class="section" id="comprehensions">
-<h2><a class="toc-backref" href="#table-of-contents">7.2&nbsp;&nbsp;&nbsp;Comprehensions</a></h2>
-<p>Scala has the ability to represent <tt class="docutils literal"><span class="pre">for</span></tt>-comprehensions with more than one
-generator (usually, more than one <tt class="docutils literal"><span class="pre">&lt;-</span></tt> symbol).  In such cases, there are two
-alternative syntaxes which may be used:</p>
-<pre class="literal-block">
-// wrong!
-for (x &lt;- board.rows; y &lt;- board.files)
-  yield (x, y)
-
-// right!
-for {
-  x &lt;- board.rows
-  y &lt;- board.files
-} yield (x, y)
-</pre>
-<p>While the latter style is more verbose, it is generally considered easier to read
-and more &quot;scalable&quot; (meaning that it does not become obfuscated as the complexity
-of the comprehension increases).  You should prefer this form for all
-<tt class="docutils literal"><span class="pre">for</span></tt>-comprehensions of more than one generator.  Comprehensions with only a
-single generator (e.g. <tt class="docutils literal"><span class="pre">for</span> <span class="pre">(i</span> <span class="pre">&lt;-</span> <span class="pre">0</span> <span class="pre">to</span> <span class="pre">10)</span> <span class="pre">yield</span> <span class="pre">i</span></tt>) should use the first
-form (parentheses rather than curly braces).</p>
-<p>The exceptions to this rule are <tt class="docutils literal"><span class="pre">for</span></tt>-comprehensions which lack a <tt class="docutils literal"><span class="pre">yield</span></tt>
-clause.  In such cases, the construct is actually a loop rather than a functional
-comprehension and it is usually more readable to string the generators together
-between parentheses rather than using the syntactically-confusing <tt class="docutils literal"><span class="pre">}</span> <span class="pre">{</span></tt>
-construct:</p>
-<pre class="literal-block">
-// wrong!
-for {
-  x &lt;- board.rows
-  y &lt;- board.files
-} {
-  printf(&quot;(%d, %d)&quot;, x, y)
-}
-
-// right!
-for (x &lt;- board.rows; y &lt;- board.files) {
-  printf(&quot;(%d, %d)&quot;, x, y)
-}
-</pre>
-</div>
-<div class="section" id="trivial-conditionals">
-<h2><a class="toc-backref" href="#table-of-contents">7.3&nbsp;&nbsp;&nbsp;Trivial Conditionals</a></h2>
-<p>There are certain situations where it is useful to create a short <tt class="docutils literal"><span class="pre">if</span></tt>/<tt class="docutils literal"><span class="pre">else</span></tt>
-expression for nested use within a larger expression.  In Java, this sort of
-case would traditionally be handled by the ternary operator (<tt class="docutils literal"><span class="pre">?</span></tt>/<tt class="docutils literal"><span class="pre">:</span></tt>), a
-syntactic device which Scala lacks.  In these situations (and really any time
-you have a extremely brief <tt class="docutils literal"><span class="pre">if</span></tt>/<tt class="docutils literal"><span class="pre">else</span></tt> expression) it is permissible to place
-the &quot;then&quot; and &quot;else&quot; branches on the same line as the <tt class="docutils literal"><span class="pre">if</span></tt> and <tt class="docutils literal"><span class="pre">else</span></tt>
-keywords:</p>
-<pre class="literal-block">
-val res = if (foo) bar else baz
-</pre>
-<p>The key here is that readability is not hindered by moving both branches inline
-with the <tt class="docutils literal"><span class="pre">if</span></tt>/<tt class="docutils literal"><span class="pre">else</span></tt>.  Note that this style should never be used with
-imperative <tt class="docutils literal"><span class="pre">if</span></tt> expressions nor should curly braces be employed.</p>
-</div>
-</div>
-<div class="section" id="method-invocation">
-<h1><a class="toc-backref" href="#table-of-contents">8&nbsp;&nbsp;&nbsp;Method Invocation</a></h1>
-<p>Generally speaking, method invocation in Scala follows Java conventions.  In
-other words, there should not be a space between the invocation target and the
-dot (<tt class="docutils literal"><span class="pre">.</span></tt>), nor a space between the dot and the method name, nor should there
-be any space between the method name and the argument-delimiters (parentheses).
-Each argument should be separated by a single space <em>following</em> the comma (<tt class="docutils literal"><span class="pre">,</span></tt>):</p>
-<pre class="literal-block">
-foo(42, bar)
-target.foo(42, bar)
-target.foo()
-</pre>
-<div class="section" id="arity-0">
-<h2><a class="toc-backref" href="#table-of-contents">8.1&nbsp;&nbsp;&nbsp;Arity-0</a></h2>
-<p>Scala allows the omission of parentheses on methods of arity-0 (no arguments):</p>
-<pre class="literal-block">
-reply()
-
-// is the same as
-
-reply
-</pre>
-<p>However, this syntax should <em>only</em> be used when the method in question has no
-side-effects (purely-functional).  In other words, it would be acceptable to
-omit parentheses when calling <tt class="docutils literal"><span class="pre">queue.size</span></tt>, but not when calling <tt class="docutils literal"><span class="pre">println()</span></tt>.
-This convention mirrors the method declaration convention given above.</p>
-<p>Religiously observing this convention will <em>dramatically</em> improve code readability
-and will make it much easier to understand at a glance the most basic operation
-of any given method.  Resist the urge to omit parentheses simply to save two
-characters!</p>
-<div class="section" id="suffix-notation">
-<h3>8.1.1&nbsp;&nbsp;&nbsp;Suffix Notation</h3>
-<p>Scala allows methods of arity-0 to be invoked using suffix notation:</p>
-<pre class="literal-block">
-names.toList
-
-// is the same as
-
-names toList
-</pre>
-<p>This style should be used with great care.  In order to avoid ambiguity in Scala's
-grammar, any method which is invoked via suffix notation must be the <em>last</em> item
-on a given line.  Also, the following line must be completely empty, otherwise
-Scala's parser will assume that the suffix notation is actually infix and will
-(incorrectly) attempt to incorporate the contents of the following line into the
-suffix invocation:</p>
-<pre class="literal-block">
-names toList
-val answer = 42        // will not compile!
-</pre>
-<p>This style should only be used on methods with no side-effects, preferably ones
-which were declared without parentheses (see above).  The most common acceptable
-case for this syntax is as the last operation in a chain of infix method calls:</p>
-<pre class="literal-block">
-// acceptable and idiomatic
-names map { _.toUpperCase } filter { _.length &gt; 5 } toStream
-</pre>
-<p>In this case, suffix notation must be used with the <tt class="docutils literal"><span class="pre">toStream</span></tt> function,
-otherwise a separate value assignment would have been required.  However, under
-less specialized circumstances, suffix notation should be avoided:</p>
-<pre class="literal-block">
-// wrong!
-val ls = names toList
-
-// right!
-val ls = names.toList
-</pre>
-<p>The primary exception to this rule is for domain-specific languages.  One very
-common use of suffix notation which goes against the above is converting a
-<tt class="docutils literal"><span class="pre">String</span></tt> value into a <tt class="docutils literal"><span class="pre">Regexp</span></tt>:</p>
-<pre class="literal-block">
-// tolerated
-val reg = &quot;&quot;&quot;\d+(\.\d+)?&quot;&quot;&quot;r
-</pre>
-<p>In this example, <tt class="docutils literal"><span class="pre">r</span></tt> is actually a method available on type <tt class="docutils literal"><span class="pre">String</span></tt> via an
-implicit conversion.  It is being called in suffix notation for brevity.
-However, the following would have been just as acceptable:</p>
-<pre class="literal-block">
-// safer
-val reg = &quot;&quot;&quot;\d+(\.\d+)?&quot;&quot;&quot;.r
-</pre>
-</div>
-</div>
-<div class="section" id="id8">
-<h2><a class="toc-backref" href="#table-of-contents">8.2&nbsp;&nbsp;&nbsp;Arity-1</a></h2>
-<p>Scala has a special syntax for invoking methods of arity-1 (one argument):</p>
-<pre class="literal-block">
-names.mkString(&quot;,&quot;)
-
-// is the same as
-
-names mkString &quot;,&quot;
-</pre>
-<p>This syntax is formally known as &quot;infix notation&quot;.  It should <em>only</em> be used for
-purely-functional methods (methods with no side-effects) - such as <tt class="docutils literal"><span class="pre">mkString</span></tt> -
-or methods which take functions as paramethers - such as <tt class="docutils literal"><span class="pre">foreach</span></tt>:</p>
-<pre class="literal-block">
-// right!
-names foreach { n =&gt; println(n) }
-names mkString &quot;,&quot;
-optStr getOrElse &quot;&lt;empty&gt;&quot;
-
-// wrong!
-javaList add item
-</pre>
-<div class="section" id="id9">
-<h3>8.2.1&nbsp;&nbsp;&nbsp;Higher-Order Functions</h3>
-<p>As noted, methods which take functions as parameters (such as <tt class="docutils literal"><span class="pre">map</span></tt> or <tt class="docutils literal"><span class="pre">foreach</span></tt>)
-should be invoked using infix notation.  It is also <em>possible</em> to invoke such
-methods in the following way:</p>
-<pre class="literal-block">
-names.map { _.toUpperCase }     // wrong!
-</pre>
-<p>This style is <em>not</em> the accepted standard!  The reason to avoid this style is
-for situations where more than one invocation must be chained together:</p>
-<pre class="literal-block">
-// wrong!
-names.map { _.toUpperCase }.filter { _.length &gt; 5 }
-
-// right!
-names map { _.toUpperCase } filter { _.length &gt; 5 }
-</pre>
-<p>Both of these work, but the former exploits an extremely unintuitive wrinkle in
-Scala's grammar.  The sub-expression <tt class="docutils literal"><span class="pre">{</span> <span class="pre">_.toUpperCase</span> <span class="pre">}.filter</span></tt> when taken in
-isolation looks for all the world like we are invoking the <tt class="docutils literal"><span class="pre">filter</span></tt> method on
-a function value.  However, we are actually invoking <tt class="docutils literal"><span class="pre">filter</span></tt> on the result of
-the <tt class="docutils literal"><span class="pre">map</span></tt> method, which takes the function value as a parameter.  This syntax
-is confusing and often discouraged in Ruby, but it is shunned outright in Scala.</p>
-</div>
-</div>
-<div class="section" id="id10">
-<h2><a class="toc-backref" href="#table-of-contents">8.3&nbsp;&nbsp;&nbsp;Operators</a></h2>
-<p>Symbolic methods (operators) should <em>always</em> be invoked using infix notation with
-spaces separated the target, the operator and the parameter:</p>
-<pre class="literal-block">
-// right!
-&quot;daniel&quot; + &quot; &quot; + &quot;Spiewak&quot;
-
-// wrong!
-&quot;daniel&quot;+&quot; &quot;+&quot;spiewak&quot;
-</pre>
-<p>For the most part, this idiom follows Java and Haskell syntactic conventions.</p>
-<p>Operators which take more than one parameter (they do exist!) should still be
-invoked using infix notation, delimited by spaces:</p>
-<pre class="literal-block">
-foo ** (bar, baz)
-</pre>
-<p>Such operators are fairly rare, however, and should be avoided during API design.</p>
-</div>
-</div>
-<div class="section" id="files">
-<h1><a class="toc-backref" href="#table-of-contents">9&nbsp;&nbsp;&nbsp;Files</a></h1>
-<p>As a rule, files should contain a <em>single</em> logical compilation unit.  By &quot;logical&quot;
-I mean a class, trait or object.  One exception to this guideline is for classes
-or traits which have companion objects.  Companion objects should be grouped
-with their corresponding class or trait in the same file.  These files should
-be named according to the class, trait or object they contain:</p>
-<pre class="literal-block">
-package com.novell.coolness
-
-class Inbox { ... }
-
-// companion object
-object Inbox { ... }
-</pre>
-<p>These compilation units should be placed within a file named <tt class="docutils literal"><span class="pre">Inbox.scala</span></tt>
-within the <tt class="docutils literal"><span class="pre">com/novell/coolness</span></tt> directory.  In short, the Java file naming
-and positioning conventions should be preferred, despite the fact that Scala
-allows for greater flexibility in this regard.</p>
-<div class="section" id="multi-unit-files">
-<h2><a class="toc-backref" href="#table-of-contents">9.1&nbsp;&nbsp;&nbsp;Multi-Unit Files</a></h2>
-<p>Despite what was said above, there are some important situations which warrent the
-inclusion of multiple compilation units within a single file.  One common example
-is that of a sealed trait and several sub-classes (often emulating the ADT
-language feature available in functional languages):</p>
-<pre class="literal-block">
-sealed trait Option[+A]
-
-case class Some[A](a: A) extends Option[A]
-
-case object None extends Option[Nothing]
-</pre>
-<p>Because of the nature of sealed superclasses (and traits), all subtypes <em>must</em>
-be included in the same file.  Thus, such a situation definitely qualifies as
-an instance where the preference for single-unit files should be ignored.</p>
-<p>Another case is when multiple classes logically form a single, cohesive group,
-sharing concepts to the point where maintenance is greatly served by containing
-them within a single file.  These situations are harder to predict than the
-aforementioned sealed supertype exception.  Generally speaking, if it is <em>easier</em>
-to perform long-term maintenance and development on several units in a single
-file rather than spread across multiple, then such an organizational strategy
-should be preferred for these classes.  However, keep in mind that when multiple
-units are contained within a single file, it is often more difficult to find
-specific units when it comes time to make changes.</p>
-<p><strong>All multi-unit files should be given camelCase names with a lower-case first letter.</strong>
-This is a very important convention.  It differentiates multi- from single-unit
-files, greatly easing the process of finding declarations.  These filenames may
-be based upon a significant type which they contain (e.g. <tt class="docutils literal"><span class="pre">option.scala</span></tt> for
-the example above), or may be descriptive of the logical property shared by all
-units within (e.g. <tt class="docutils literal"><span class="pre">ast.scala</span></tt>).</p>
-</div>
-</div>
-</div>
-</body>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="overview.html"
+                                  title="next chapter">Overview</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="sources/index.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="overview.html" title="Overview"
+             >next</a> |</li>
+        <li><a href="">Scala Style Guide v1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Scala Community.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+    </div>
+  </body>
 </html>

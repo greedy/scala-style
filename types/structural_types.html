@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Structural Types &mdash; Scala Style Guide v1.0 documentation</title>
+    <link rel="stylesheet" href="../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <link rel="top" title="Scala Style Guide v1.0 documentation" href="../index.html" />
+    <link rel="up" title="Types" href="index.html" />
+    <link rel="next" title="Nested Blocks" href="../nested_blocks/index.html" />
+    <link rel="prev" title="Arity-1" href="functions/arity_1.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../nested_blocks/index.html" title="Nested Blocks"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="functions/arity_1.html" title="Arity-1"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Types</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="structural-types">
+<h1>Structural Types<a class="headerlink" href="#structural-types" title="Permalink to this headline">¶</a></h1>
+<p>Structural types should be declared on a single line if they are less than 50
+characters in length.  Otherwise, they should be split across multiple lines and
+(usually) assigned to their own type alias:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// wrong!</span>
+<span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="o">{</span> <span class="kt">def</span> <span class="kt">bar</span><span class="o">(</span><span class="kt">a:</span> <span class="kt">Int</span><span class="o">,</span> <span class="kt">b:</span> <span class="kt">Int</span><span class="o">)</span><span class="kt">:</span> <span class="kt">String</span><span class="o">;</span> <span class="k">val</span> <span class="n">baz</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">String</span> <span class="k">=&gt;</span> <span class="kt">String</span><span class="o">]</span> <span class="o">})</span> <span class="k">=</span> <span class="o">...</span>
+
+<span class="c1">// right!</span>
+<span class="k">private</span> <span class="k">type</span> <span class="kt">FooParam</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="n">baz</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">String</span> <span class="k">=&gt;</span> <span class="kt">String</span><span class="o">]</span>
+  <span class="k">def</span> <span class="n">bar</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">String</span>
+<span class="o">}</span>
+
+<span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">FooParam</span><span class="o">)</span> <span class="k">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>Simpler structural types (under 50 characters) may be declared and used inline:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="o">{</span> <span class="kt">val</span> <span class="kt">bar:</span> <span class="kt">String</span> <span class="o">})</span> <span class="k">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>When declaring structural types inline, each member should be separated by a
+semi-colon and a single space, the opening brace should be <em>followed</em> by a space
+while the closing brace should be <em>preceded</em> by a space (as demonstrated in both
+examples above).</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="functions/arity_1.html"
+                                  title="previous chapter">Arity-1</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="../nested_blocks/index.html"
+                                  title="next chapter">Nested Blocks</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../sources/types/structural_types.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../nested_blocks/index.html" title="Nested Blocks"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="functions/arity_1.html" title="Arity-1"
+             >previous</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Types</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Scala Community.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+    </div>
+  </body>
+</html>

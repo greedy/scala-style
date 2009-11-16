@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Line Wrapping &mdash; Scala Style Guide v1.0 documentation</title>
+    <link rel="stylesheet" href="../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <link rel="top" title="Scala Style Guide v1.0 documentation" href="../index.html" />
+    <link rel="up" title="Indentation" href="index.html" />
+    <link rel="next" title="Methods with Numerous Arguments" href="methods_with_numerous_arguments.html" />
+    <link rel="prev" title="Indentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="methods_with_numerous_arguments.html" title="Methods with Numerous Arguments"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Indentation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Indentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="line-wrapping">
+<h1>Line Wrapping<a class="headerlink" href="#line-wrapping" title="Permalink to this headline">¶</a></h1>
+<p>There are times when a single expression reaches a length where it becomes
+unreadable to keep it confined to a single line (usually that length is anywhere
+above 80 characters).  In such cases, the <em>preferred</em> approach is to simply
+split the expression up into multiple expressions by assigning intermediate results
+to values or by using the <a class="reference external" href="http://paste.pocoo.org/show/134013/">pipeline operator</a>.  However, this is not always a
+practical solution.</p>
+<p>When it is absolutely necessary to wrap an expression across more than one line,
+each successive line should be indented two spaces from the <em>first</em>.  Also
+remember that Scala requires each &#8220;wrap line&#8221; to either have an unclosed
+parenthetical or to end with an infix binary function or operator in which the
+right parameter is not given:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">result</span> <span class="k">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">+</span>
+  <span class="mi">7</span> <span class="o">+</span> <span class="mi">8</span> <span class="o">+</span> <span class="mi">9</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">11</span> <span class="o">+</span> <span class="mi">12</span> <span class="o">+</span> <span class="mi">13</span> <span class="o">+</span> <span class="mi">14</span> <span class="o">+</span>
+  <span class="mi">15</span> <span class="o">+</span> <span class="mi">16</span> <span class="o">+</span> <span class="mi">17</span> <span class="o">+</span> <span class="mi">18</span> <span class="o">+</span> <span class="mi">19</span> <span class="o">+</span> <span class="mi">20</span>
+</pre></div>
+</div>
+<p>Without this trailing operator, Scala will infer a semi-colon at the end of a
+line which was intended to wrap, throwing off the compilation sometimes without
+even so much as a warning.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="index.html"
+                                  title="previous chapter">Indentation</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="methods_with_numerous_arguments.html"
+                                  title="next chapter">Methods with Numerous Arguments</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../sources/indentation/line_wrapping.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="methods_with_numerous_arguments.html" title="Methods with Numerous Arguments"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Indentation"
+             >previous</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Indentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Scala Community.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+    </div>
+  </body>
+</html>
