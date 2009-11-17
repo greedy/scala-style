@@ -1,0 +1,13 @@
+{% extends "!layout.html" %}
+
+{% block sidebarsourcelink %}
+{{ super() }}
+<h3>Alternate Formats</h3>
+<ul>
+	<li><a href="{{ pathto('ScalaStyleGuide.pdf', 1) }}">Download PDF</a></li>
+</ul>
+<h3>Contribute</h3>
+<ul>
+	<li>Visit the <a href="http://github.com/davetron5000/scala-style/">GitHub Project</a></li>
+</ul>
+{% endblock %}
