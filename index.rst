@@ -9,10 +9,6 @@ encouraged and how it relates to other alternatives. As with all style guides,
 treat this document as a list of rules to be broken. There are certainly times
 when alternative styles should be preferred over the ones given here.
 
-.. only:: html
-
-   This document is also available in `PDF <ScalaStyleGuide.pdf>`_.
-
 Contents:
 
 .. toctree::
