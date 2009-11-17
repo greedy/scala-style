@@ -38,8 +38,9 @@ maintainable.
 
 .. _arity: http://en.wikipedia.org/wiki/Arity
 
+.. rubric:: Footnotes
+
 .. [#dsl_note] Please note that fluid APIs and internal domain-specific languages have a
                tendency to break the guidelines given below for the sake of syntax.  Such
                exceptions should not be considered a violation so much as a time when these
                rules do not apply.  In a DSL, syntax should be paramount over convention.
-
